@@ -1,0 +1,97 @@
+* {
+  margin: 0px;
+}
+
+.header {
+  background-color: #021026;
+  color: #ffffff;
+  padding: 1%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #e6e6e6;
+}
+.header-item {
+  display: flex;
+  align-items: start;
+}
+
+.header-searchbar {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+}
+.card {
+  margin: 0 auto; /* Added */
+  margin-top: 10%;
+  margin-right: 10%;
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  postion: fixed;
+
+  top: 26%;
+  width: 70%;
+  right: 10%;
+}
+.datePicker {
+  appearance: none;
+  box-sizing: border-box;
+  border: 1px solid black;
+  background: transparent;
+  color: grey;
+  font-size: 1rem;
+  padding: 6px;
+  width: 38.9%;
+  ::-webkit-datetime-edit-text {
+    padding: 0 2rem;
+  }
+  ::-webkit-datetime-edit-month-field {
+    text-transform: uppercase;
+  }
+  ::-webkit-datetime-edit-day-field {
+    text-transform: uppercase;
+  }
+  ::-webkit-datetime-edit-year-field {
+    text-transform: uppercase;
+  }
+  ::-webkit-inner-spin-button {
+    display: none;
+  }
+  ::-webkit-calendar-picker-indicator {
+    background: transparent;
+  }
+}
+.endDate {
+  border: 1px solid black;
+  padding: 6px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: transparent;
+  background-color: #b8bccc;
+  ::-webkit-datetime-edit-text {
+    padding: 0 2rem;
+  }
+  ::-webkit-datetime-edit-month-field {
+    text-transform: uppercase;
+  }
+  ::-webkit-datetime-edit-day-field {
+    text-transform: uppercase;
+  }
+  ::-webkit-datetime-edit-year-field {
+    text-transform: uppercase;
+  }
+  ::-webkit-inner-spin-button {
+    display: none;
+  }
+  ::-webkit-calendar-picker-indicator {
+    background: transparent;
+  }
+}
+#op {
+  color: grey;
+}

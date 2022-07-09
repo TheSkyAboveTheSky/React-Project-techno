@@ -1,0 +1,31 @@
+{
+  "name": "project-management-tickets-issuing-web-app-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon Backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EL-Gazoly/Project-Management-Tickets-Issuing-Web-App-Plugin.git"
+  },
+  "author": "Adham El-Gazoly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EL-Gazoly/Project-Management-Tickets-Issuing-Web-App-Plugin/issues"
+  },
+  "homepage": "https://github.com/EL-Gazoly/Project-Management-Tickets-Issuing-Web-App-Plugin#readme",
+  "dependencies": {
+    "async-handler": "^0.0.3",
+    "body-parser": "^1.20.0",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^6.4.3",
+    "nodemon": "^2.0.19"
+  }
+}
