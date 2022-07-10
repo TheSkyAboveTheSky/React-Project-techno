@@ -21,6 +21,9 @@ const taskSchema = new mongoose.Schema({
     due : {
         type : Date,
         required : true
+    },
+    avatar: {
+        type : String,
     }
 
 })
