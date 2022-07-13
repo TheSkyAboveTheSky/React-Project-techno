@@ -16,7 +16,10 @@ export default class ProtectedRoutes extends Component {
                 return (<Route path={this.props.path} component={this.props.component}/>)
               }else if (this.props.path === '/teamLeader') {
                 return (<Route path={this.props.path} component={this.props.component}/>)
+              }else if (this.props.path === '/unAuthorized') {
+                return (<Route path={this.props.path} component={this.props.component}/>)
               }
+
             
         }
         } catch (error) {
