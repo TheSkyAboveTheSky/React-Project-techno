@@ -33,17 +33,20 @@ class Login extends Component {
             if(data.message === 'success') {
                 localStorage.setItem('accessToken', data.accessToken);
                 localStorage.setItem('roles', data.roles);
-                if(data.roles.includes(1010)) {
+                if(data.roles.includes("1010")) {
                     this.props.history.replace('/admin');
                 }
-                else if(data.roles.includes(4040)) {
+                else if(data.roles.includes("4040")) {
                     this.props.history.replace('/employee');
                 }
-                else if(data.roles.includes(2020)) {
+                else if(data.roles.includes("2020")) {
                     this.props.history.replace('/projectManager');
                 }
-                else if(data.roles.includes(3030)) {
+                else if(data.roles.includes("3030")) {
                     this.props.history.replace('/teamLeader');
+                }
+                else{
+                    this.props.history.replace('/unAuthorized');
                 }
             }else{
                 alert('Invalid credentials');

@@ -5,8 +5,8 @@ const UserSchema = new Schema({
     username: String,
     roles: {
         type: Object,
-        default: { Employee : 4040 },
-        enum: [1010, 2020, 3030, 4040],
+        default: { Admin : "1010" },
+        enum: ["1010", "2020", "3030", "4040"],
         required: false
     },
     email: String,
