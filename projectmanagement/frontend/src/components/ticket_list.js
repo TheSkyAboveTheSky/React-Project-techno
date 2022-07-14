@@ -1,6 +1,6 @@
 import {getTickets} from "../scripts/tickets"
-import { useState, useEffect } from "react"
-
+import { useState, useEffect } from "react" //react hooks
+import {Link} from "react-router-dom"
 const TicketList = () => {
     const [idList,setIdList] = useState([])
 
@@ -27,7 +27,9 @@ const TicketList = () => {
                 idList.map(element =>                    
                     (
                         <div key={element._id}>
-                           <a href="">{element._id}</a> 
+                          <Link to={`/ticket/${element._id}`}>
+                                <a href="">{element._id}</a>                           
+                          </Link>
                         </div>
                     )
                 )

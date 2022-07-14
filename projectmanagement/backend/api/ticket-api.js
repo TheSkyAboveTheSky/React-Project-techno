@@ -19,6 +19,18 @@ const Ticket = mongoose.model('tickets',mongoose.Schema({
     department: String
 }))
 
+
+const Reply = mongoose.model('replies',mongoose.Schema({
+    userName:String,
+    location:String,
+    date:Date,
+    title:String,
+    content:String,
+    loves: Number,
+    comments:Number
+}))
+
+
 const getTickets = (done) => {
     Ticket.find({}).select('_id').exec((err,data) => {
         if(err)
@@ -33,4 +45,33 @@ const getTickets = (done) => {
 }
 
 
-module.exports ={ getTickets}
+const getTicket = (id,done) => {
+    Ticket.findById(id,(err,data) => {
+        if(err)
+        {
+            done(err)
+        }
+        else
+        {
+            done(null,data)
+        }
+    })
+}
+
+
+const postReply = (data,done) => {
+    const reply = new Reply(data)
+    reply.save((err,data) => {
+        if(err)
+        {
+            console.log("Error saving data to database from database client")
+            done(err)
+        }
+        else
+        {
+            done(null,data)
+        }
+    })
+}
+
+module.exports ={ getTickets, getTicket, postReply}

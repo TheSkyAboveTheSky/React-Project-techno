@@ -1,12 +1,48 @@
+import { useEffect, useState } from "react"
+import { getTicket, postReply } from "../scripts/tickets"
+import {useParams} from 'react-router-dom'
 
+const TicketDetails = () => {
+    const [id,setId] = useState(useParams().id)
+    const [ticketData,setTicketData] = useState({})
+    const [replyData,setReply] = useState({
+        userName:"Mahmoud Hassan",
+        location:"Alexandria, Egypt",
 
-const ticketDetails = () => {
+    })
+
+    const handleChange = (e) => {
+        setReply({
+          ...replyData,
+         [e.target.name]: e.target.value
+        })
+    }
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        postReply(replyData)
+    }
+
+    useEffect(() => {
+        getTicket(id,(err,data) => {
+            if(err)
+            {
+                console.log("Error fetching.."+err)
+            }
+            else
+            {
+                console.log(data)
+                setTicketData(data)
+            }
+        })
+    },[])
 
     return (
         <div id="ticket-details" className="row-section">
             <div className="column-section" id="details">
                 <div className="column-section" id="user-data">
                     <div id="user-profile"></div>
+                    <p id="user-name">{ticketData.userName}</p>
                     <p id="user-email">[Emailuser@gmail.com]</p>
                     <div class="buttons row-section">
                         <button>Follow</button>
@@ -18,7 +54,7 @@ const ticketDetails = () => {
                         Ticket Details
                     </div>
                     <div id="description">
-                        I am writing this ticket to let you know that your webapp sucks
+                        {ticketData.details}
                     </div>
                 </div>
                 <div className="column-section" id="tickets-info">
@@ -27,21 +63,24 @@ const ticketDetails = () => {
                     </div>
                     <div className="column-section" id="tickets-info-content">
                     <label for="priority">Priority</label>
-                    <input id="priority" type="text" value="High" readonly></input>
+                    <input id="priority" type="text" value={ticketData.Priority} readonly></input>
                     <label for="department">Department</label>
-                    <input id="department" type="text" value="pre-sales" readonly></input>
+                    <input id="department" type="text" value={ticketData.department} readonly></input>
                     <label for="product">Product</label>
-                    <input id="product" type="text" value="Test Product" readonly></input>
+                    <input id="product" type="text" value={ticketData.Product} readonly></input>
                     <label for="Date">Date</label>
-                    <input id="Date" type="text" value="2000-08-07" readonly></input>
+                    <input id="Date" type="text" value={ticketData.date} readonly></input>
                     </div>
                 </div>
             </div>
             <div className="column-section" id="reply">
                 <div className="column-section" id="post-reply">
                     <form className="column-section">
-                        <textarea></textarea>
-                        <button>Post</button>
+                        <label>Ticket Title</label>
+                        <input  name="title" onChange={handleChange}></input>
+                        <label>Ticket details</label>
+                        <textarea  name="content" onChange={handleChange} ></textarea>
+                        <button onClick={handleClick}>Post</button>
                     </form>
                 </div>
                 <div className="column-section" id="replies">
@@ -91,4 +130,4 @@ const ticketDetails = () => {
     )
 }
 
-export default ticketDetails
+export default TicketDetails
