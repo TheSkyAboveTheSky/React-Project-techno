@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getTicket, postReply } from "../scripts/tickets"
+import { getTicket, postReply, updateTicket, getReply } from "../scripts/tickets"
 import {useParams} from 'react-router-dom'
 
 const TicketDetails = () => {
@@ -8,9 +8,9 @@ const TicketDetails = () => {
     const [replyData,setReply] = useState({
         userName:"Mahmoud Hassan",
         location:"Alexandria, Egypt",
-
     })
 
+    const [replies,setReplies] = useState([])
     const handleChange = (e) => {
         setReply({
           ...replyData,
@@ -18,24 +18,60 @@ const TicketDetails = () => {
         })
     }
 
+
+    //Handle post reply click
     const handleClick = (e) => {
         e.preventDefault();
-        postReply(replyData)
-    }
-
-    useEffect(() => {
-        getTicket(id,(err,data) => {
-            if(err)
+        //promise chaining
+        //post reply to database
+        postReply(replyData).then((reply) => {
+            const obj = {}
+            if(ticketData.numberOfReplies)
             {
-                console.log("Error fetching.."+err)
+                //console.log(ticketData.numberOfReplies)
+                obj["numberOfReplies"] = ticketData.numberOfReplies + 1
+            }
+            if(ticketData.replyIdList)
+            {
+                obj["replyIdList"] = [...ticketData.replyIdList, reply._id]
             }
             else
             {
-                console.log(data)
-                setTicketData(data)
+                console.log("Inheeere")
+                obj["replyIdList"] = [reply._id]
             }
-        })
+            setReplies(arr => [...arr,reply])
+            return updateTicket(id,obj)
+        }).then((doc) => { //update ticket with data about replies
+            setTicketData(doc)
+        }).catch((err) => {
+            console.log("Err updating ticket from client ",err)
+        }) 
+    }
+
+    const fetchData = () => {
+        getTicket(id).then((data) => {  
+            setTicketData(data)
+            return data
+        }).then((data) => {
+            //const Replies = []
+            data.replyIdList.forEach((replyId) => {
+                console.log(replyId)
+                getReply(replyId).then((doc) => {
+                    //Replies.push(doc)
+                    setReplies(arr => [...arr,doc])
+                    console.log(replies)
+                }).catch(err => console.log(err))
+            })
+            //return Replies
+        }).catch(err => console.log(err))
+
+    }
+
+    useEffect(() => {
+        fetchData()
     },[])
+
 
     return (
         <div id="ticket-details" className="row-section">
@@ -44,11 +80,13 @@ const TicketDetails = () => {
                     <div id="user-profile"></div>
                     <p id="user-name">{ticketData.userName}</p>
                     <p id="user-email">[Emailuser@gmail.com]</p>
-                    <div class="buttons row-section">
+                    <div className="row-section" id="buttons">
                         <button>Follow</button>
                         <button>Message</button>
                     </div>
                 </div>
+                <hr></hr>
+                <div id="dash"></div>
                 <div className="column-section" id="details-section">
                     <div id="details-title">
                         Ticket Details
@@ -57,73 +95,96 @@ const TicketDetails = () => {
                         {ticketData.details}
                     </div>
                 </div>
+                <hr></hr>
+                <div id="dash"></div>
                 <div className="column-section" id="tickets-info">
                     <div id="ticket-info-title">
                         Ticket Info
                     </div>
                     <div className="column-section" id="tickets-info-content">
+                    <div className="column-section" id="no-border">
                     <label for="priority">Priority</label>
                     <input id="priority" type="text" value={ticketData.Priority} readonly></input>
+                    </div>
+                    <div className="column-section" id="no-border">
                     <label for="department">Department</label>
                     <input id="department" type="text" value={ticketData.department} readonly></input>
+                    </div>
+                    <div className="column-section" id="no-border">
                     <label for="product">Product</label>
                     <input id="product" type="text" value={ticketData.Product} readonly></input>
+                    </div>
+                    <div className="column-section" id="no-border">
                     <label for="Date">Date</label>
                     <input id="Date" type="text" value={ticketData.date} readonly></input>
                     </div>
+                    </div>
                 </div>
             </div>
-            <div className="column-section" id="reply">
+            <div className="column-section" id="reply-section">
                 <div className="column-section" id="post-reply">
                     <form className="column-section">
-                        <label>Ticket Title</label>
-                        <input  name="title" onChange={handleChange}></input>
-                        <label>Ticket details</label>
-                        <textarea  name="content" onChange={handleChange} ></textarea>
-                        <button onClick={handleClick}>Post</button>
+                        <input placeholder="title" id="title"  name="title" onChange={handleChange}></input>
+                        <textarea placeholder="Reply detail" id="content"  name="content" onChange={handleChange} ></textarea>
+                        <button id="post-btn" onClick={handleClick}>Post</button>
                     </form>
                 </div>
+                <div id="dash"></div>
+                <div id="replies-title">Replies</div>
+                <div id="dash"></div>
+                <hr></hr>
                 <div className="column-section" id="replies">
-                    <div id="reply">
+                    {
+                    replies.map((reply) => (
+                    <>
+                    <div key={reply._id} id="reply">
                         <div className="row-section" id="user-info">
-                            <img src="../../assets/user.png" alt="User image" />
-                            <div id="reply-user-name">User Name</div>
-                            <div id="reply-user-location">San Francisco, USA</div>
-                            <div id="reply-user-date">20-April-2019</div>
+                            <div className="row-section">
+                            <div id="reply-logo"></div>
+                            <div id="reply-user-name">{reply.userName}</div>
+                            </div>
+                            <div id="reply-user-location">{reply.location}</div>
+                            <div id="reply-user-date">{new Date(reply.date).toUTCString()}</div>
                         </div>
                         <div className="column-section" id="reply-body">
                             <div id="reply-title">
-                                I don't like this shit
+                                {reply.title}
                             </div>
                             <div id="reply-details">
-                                So am writing this reply cuz i don't like dat shit
+                                {reply.content}
                             </div>
                             <div className="row-section" id="reactions">
-                                <div className="row-section" id="react">
+                                <div className="column-section" id="react">
                                     <div id="react-btn">
                                         
                                     </div>
                                     <div id="react-count">
-                                        12
+                                        {reply.loves}
                                     </div>
                                     <div id="react-type">
-                                        Love
+                                        Loves
                                     </div>
                                 </div>
-                                <div className="row-section" id="react">
+                                <div className="column-section" id="react">
                                     <div id="react-btn">
 
                                     </div>
                                     <div id="react-count">
-                                        5
+                                        {reply.comments}
                                     </div>
                                     <div id="react-type">
-                                        Comment
+                                        Comments
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div id="dash"></div>
+                    </>
+                    
+                        )
+                        )
+                    }
                 </div>
             </div>
         </div>

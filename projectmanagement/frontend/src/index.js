@@ -9,12 +9,12 @@ import TicketList from './components/ticket_list';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <React.StrictMode>
       <Routes>
         <Route path="/list" element={<TicketList />} />
         <Route path="/ticket/:id" element={<TicketDetails />} />
       </Routes>
-    </React.StrictMode>  
+    {/* <React.StrictMode>
+    </React.StrictMode>   */}
   </BrowserRouter>
 );
 

@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+
+:root{
+    --dark:#2b2d42;
+    --light:#abd5bd;
+    --border:#dee2e6;
+}
+    
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+button:hover{
+    background-color: var(--light);
+    color: var(--dark);
+    cursor: pointer;
+}
+button{
+    background-color:var(--dark);
+    color: var(--border);
+}
 
 #ticket-details{
     /* justify-content: space-around; */
@@ -7,41 +31,102 @@
 }
 
 #details{
-    grid-column: 2/ span 1;
-    height: 500px;
+    grid-column: 1/ span 2;
+    height: 700px;
+    width: 700px;
     justify-content: space-around;
+    border-radius: 15px;
+    border-color:#2b2d42
+}
+
+#details-section{
+    width: 100%;
+    border: none;
+    height: 100px;
+    justify-content: space-between;
 }
 
 #details-title{
-    text-align: left;
+    text-align: center;
     width: 100%;
-    background-color: gray;
+    background-color: var(--dark);
+    color: var(--light);        
+    justify-content: center;
+    font-size: 25px;
+}
+
+#description{
+    height: 50px;
+    width: 100%;
+    padding-top: 10px;
+    font-size: 20px;
+    text-align:center;
     border: 1px solid #ccc;
-    border-bottom: none;
+    border-radius: 15px;
+}
+
+#user-data{
+    border: none;
+    justify-content: space-between;
+    height: 250px;
+    width: 200px;
+}
+
+#user-name{
+    font-size: 25px;
+}
+
+#buttons{
+    justify-content: space-between;
+    width: 100%;
+}
+
+#buttons button{
+    border-radius: 25px;
+    width: 80px;
+    height: 45px;
+
 }
 
 #ticket-info-title
 {
-    text-align: left;
+    background-color: var(--dark);
+    color: var(--light);
     width: 100%;
-    background-color: gray;
-    border: 1px solid #ccc;
     border-bottom: none;
+    font-size: 25px;
 }
 
 #tickets-info-content
 {
     width: 100%;
-    align-items: flex-start;
+    height: 300px;
+    justify-content: space-evenly;
+    font-size: 18px;
+    border: none;
+}
+#no-border{
+    border: none;
 }
 
 #tickets-info{
     width: 100%;
+    justify-content: space-evenly;
+    height: 300px;
+    text-align: center;
+    border: none;
 }
 
-#reply{
-    grid-column: 3/ span 1;
-    width: 600px;
+
+
+#reply-section{
+    grid-column: 3/ span 2;
+    width: 800px;
+    height: 800px;
+}
+
+#title{
+    width: 100%;
 }
 
 .row-section{
@@ -51,29 +136,222 @@
     align-items: center;
 }
 
-
+#dash{
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 .column-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
 }
 
+#post-reply{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form{
+    width: 100%;
+    height: 200px;
+}
+textarea{
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+
+#replies-title{
+    background-color: var(--dark);
+    font-size: 25px;
+}
 
 #user-profile{
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     background-image: url("../assets/user.png");
     background-size: cover;
 }
 
-#details-section
+#reply-logo{
+    background-image: url("../assets/user.png");
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+}
+
+#post-btn{
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 15px;
+    
+}
+
+#reactions{
+    justify-content: space-between;
+    width: 100%;
+}
+#react{
+
+}
+
+#reply-body{
+    justify-content: space-around;
+    height: 100px;
+}
+
+#reply-title{
+    
+}
+#reply-details{
+    font-size: 20px;
+}
+
+#replies{
+    width: 100%;
+    overflow: scroll;
+    height: 500px;
+}
+#reply{
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+/* #details-section
 {
     border: 1px solid #ccc;
-}
+} */
 
 #user-info{
     justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    color: grey;
+}
+
+
+
+a{
+    text-decoration:none;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container{
+    max-width: 1024px;
+    margin : 0 auto;
+}
+.nav-brand{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-between{
+    justify-content:space-between;
+}
+.text-center{
+    text-align:center;
+}
+.border-shadow{
+    border: 1px solid var(--border-btn);
+    box-shadow: 1px 3px 10px #e9ecef;
+}
+.text-dark{
+    color: var(--dark)
+}
+.inline{
+    display: inline-block;
+}
+.text-light{
+    color: var(--light)
+}
+.text-gradient{
+    background : linear-gradient(to right,#8e2de2,#4a00e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+#header{
+    background-color: #06d6a0;
+    padding: 1em 0;
+    width: 100%;
+}
+#site-main{
+    margin-top:6em;
+    font-family: 'Barlow', sans-serif;
+
+}
+
+#site-main .container .box-nav>a{
+    font-size: 1em;
+    padding:.5em 1em;
+}
+
+#site-main .container form{
+    margin: 2em 0;
+}
+table{
+    border-spacing: 0px;
+    width: 100%;
+}
+.table td, .table th{
+    padding: .75em;
+    vertical-align: top;
+    text-align:center;
+    border-top: 1px solid var(--border);
+}
+.table td > a.btn{
+    padding:.3em 1em;
+    font: size 1.1em;
+    margin:0 .2em;
+}
+
+.table tr:hover{
+    background-color:#06d6a0;
+}
+
+.table tr:hover td > a{
+    box-shadow: none;
+}
+
+.table .thead-dark th{
+    color:#fff;
+    background-color:var(--dark);
+    border-color: #32383e;
+}
+.btn-primary{
+    background-color:#06d6a0 !important;
+    border-color: #06d6a0 !important;
+}
+.btn-primary:hover{
+    background-color:#03b989 !important;
+    border-color: #03b989 !important;
+}
+@media only screen and (max-width: 1024px)
+{
+    table,thead,tbody,th,td,tr{
+        display: block;
+    }
+    thead tr{
+        position:absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr{
+        border: 1px var(--border);
+    }
+    td{
+        border: none;
+        position:relative;
+    }
 }

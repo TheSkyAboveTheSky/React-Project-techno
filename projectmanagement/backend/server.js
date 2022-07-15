@@ -1,4 +1,4 @@
-const {getTickets, getTicket, postReply} = require('./api/ticket-api')
+const {getTickets, getTicket, postReply, updateTicket, getReply} = require('./api/ticket-api')
 
 
 const express = require("express")
@@ -52,6 +52,22 @@ app.get('/api/ticket/:id',(req,res) => {
 })
 
 
+app.get('/api/reply/:id',(req,res) => {
+    const id = req.params.id
+    getReply(id,(err,doc) => {
+        if(err)
+        {
+            console.log("Error fetching reply from database to server")
+        }
+        else{
+            console.log(doc)
+            res.json(doc)
+        }
+    })
+
+})
+
+
 app.post('/api/postReply',(req,res) => {
     // console.log("Really")
     // console.log(req.body)
@@ -65,6 +81,22 @@ app.post('/api/postReply',(req,res) => {
         {
             console.log(data)
             res.json(data)
+        }
+    })
+})
+
+
+
+app.post('/api/update/:id',(req,res) => {
+    const id = req.params.id
+    updateTicket(id,req.body,(err,doc) => {
+        if(err)
+        {
+            console.log("Error updating doc from express server")
+        }
+        else
+        {
+            res.json(doc)
         }
     })
 })

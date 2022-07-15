@@ -16,7 +16,9 @@ mongoose.connect(process.env.MONGO_URI,{},(res) => {
 const Ticket = mongoose.model('tickets',mongoose.Schema({
     title: String,
     userName: String,
-    department: String
+    department: String,
+    replyIdList: Array,
+    numberOfReplies: Number
 }))
 
 
@@ -32,7 +34,7 @@ const Reply = mongoose.model('replies',mongoose.Schema({
 
 
 const getTickets = (done) => {
-    Ticket.find({}).select('_id').exec((err,data) => {
+    Ticket.find({},(err,data) => {
         if(err)
         {
             done(err)
@@ -41,7 +43,7 @@ const getTickets = (done) => {
         {
             done(null,data)
         }
-    })    
+    })   
 }
 
 
@@ -74,4 +76,40 @@ const postReply = (data,done) => {
     })
 }
 
-module.exports ={ getTickets, getTicket, postReply}
+
+
+const updateTicket = (id,data,done) => {
+    Ticket.findByIdAndUpdate(id
+        ,data,{
+        new:true
+    },(err,doc) => {
+        if(err)
+        {
+            console.log("Error updating doc from database client")
+            done(err)
+        }
+        else
+        {   
+            //Hey
+            console.log(doc)
+            done(null,doc)
+        }
+    })
+}
+
+
+const getReply = (id,done) => {
+    Reply.findById(id,(err,doc) => {
+        if(err)
+        {
+            console.log("Error updating doc from database client")
+            done(err)
+        }
+        else
+        {
+            done(null,doc)
+        }
+    })
+} 
+
+module.exports ={ getTickets, getTicket, postReply, updateTicket, getReply}
