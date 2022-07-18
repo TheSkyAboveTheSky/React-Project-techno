@@ -2141,3 +2141,15 @@ a {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+
+
+  .margened{
+    margin-left: auto;
+  }
+
+
+  .loading-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;  
+  }
