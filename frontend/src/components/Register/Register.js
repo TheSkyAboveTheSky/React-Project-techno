@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Register.css';
+import logo from './img-01.png';
 
 class Register extends Component {
 
@@ -15,7 +16,7 @@ class Register extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    
+
 
     handleChange = (event) => {
         this.setState({
@@ -24,7 +25,8 @@ class Register extends Component {
     }
 
     handleSubmit = (event) => {
-        axios.post('http://localhost:3000/register', this.state , { withCredentials: true }).then(res => {
+        axios.post('http://localhost:3000/register', this.state, { withCredentials: true }).then(res => {
+            this.props.history.replace('/login');
             alert("User created successfully");
         }
         ).catch(err => {
@@ -35,7 +37,7 @@ class Register extends Component {
             to: this.state.email,
             subject: "Welcome Mail",
             text: "Welcome to the application"
-        } , { withCredentials: true });
+        }, { withCredentials: true });
         this.setState({
             username: '',
             password: '',
@@ -47,44 +49,57 @@ class Register extends Component {
 
     render() {
         return (
-            <div className="auth">
-                <div className="auth_left">
-                    <div className="card">
-                        <div className="text-center mb-5">
-                            <a className="header-brand" href="index.html"><i className="fa fa-soccer-ball-o brand-logo"></i></a>
+            <div className="limiter">
+                <div className="container-login100">
+                    <div className="wrap-login100">
+                        <div className="login100-pic js-tilt" data-tilt>
+                            <img src={logo} alt="IMG" />
                         </div>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="card-body">
-                                <div className="card-title">Create new account</div>
-                                <div className="form-group">
-                                    <label className="form-label">Username</label>
-                                    <input type="text" name='username' value={this.state.username} onChange={this.handleChange} className="form-control" placeholder="Enter name" required />
-                                </div>
-                                <div className="form-group">
-                                    <label className="form-label">Email address</label>
-                                    <input type="email" name='email' value={this.state.email} onChange={this.handleChange} className="form-control" placeholder="Enter email" required />
-                                </div>
-                                <div className="form-group">
-                                    <label className="form-label">Password</label>
-                                    <input type="password" name='password' value={this.state.password} onChange={this.handleChange} className="form-control" placeholder="Password" required />
-                                </div>
-                                <div className="form-group">
-                                    <label className="custom-control custom-checkbox">
-                                        <input type="checkbox" className="custom-control-input" required="required" />
-                                        <span className="custom-control-label">Agree the terms and policy</span>
-                                    </label>
-                                </div>
-                                <div className="form-footer">
-                                    <button type="submit" className="btn btn-primary btn-block">Create new account</button>
-                                </div>
+
+                        <form onSubmit={this.handleSubmit} className="login100-form validate-form">
+                            <span className="login100-form-title">
+                                Sign up
+                            </span>
+
+                            <div className="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                <input className="input100" type="text" name="username" placeholder="Name" value={this.state.username} onChange={this.handleChange} required />
+                                <span className="focus-input100"></span>
+                                <span className="symbol-input100">
+                                    <i className="fa fa-user" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div className="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                <input className="input100" type="text" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} required />
+                                <span className="focus-input100"></span>
+                                <span className="symbol-input100">
+                                    <i className="fa fa-envelope" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div className="wrap-input100 validate-input" data-validate="Password is required">
+                                <input className="input100" type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} required />
+                                <span className="focus-input100"></span>
+                                <span className="symbol-input100">
+                                    <i className="fa fa-lock" aria-hidden="true"></i>
+                                </span>
+                            </div>
+
+                            <div className="container-login100-form-btn">
+                                <button type="submit" className="login100-form-btn">
+                                    Sign up
+                                </button>
+                            </div>
+
+                            <div className="text-center p-t-136">
+                                <a className="txt2" href="login">
+                                    Already have account? Sign in
+                                    <i className="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                                </a>
                             </div>
                         </form>
-                        <div className="text-center text-muted">
-                            Already have account? <a href="login">Sign in</a>
-                        </div>
                     </div>
                 </div>
-                <div className="auth_right full_img"></div>
             </div>
         );
     }
