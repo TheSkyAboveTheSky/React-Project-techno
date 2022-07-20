@@ -25,15 +25,16 @@ class Register extends Component {
     }
 
     handleSubmit = (event) => {
-        axios.post('http://localhost:3000/register', this.state, { withCredentials: true }).then(res => {
+        axios.post('http://localhost:3001/register', this.state, { withCredentials: true }).then(res => {
             this.props.history.replace('/login');
             alert("User created successfully");
         }
         ).catch(err => {
+            console.log(err)
             alert("An error occured");
         }
         );
-        axios.post('http://localhost:3000/send-email', {
+        axios.post('http://localhost:3001/send-email', {
             to: this.state.email,
             subject: "Welcome Mail",
             text: "Welcome to the application"

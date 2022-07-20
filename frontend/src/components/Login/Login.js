@@ -26,7 +26,7 @@ class Login extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            let { data } = await axios.post('http://localhost:3000/auth', {
+            let { data } = await axios.post('http://localhost:3001/auth', {
                 email: this.state.email,
                 password: this.state.password
             });
@@ -50,6 +50,7 @@ class Login extends Component {
         }
 
     }
+    
 
     render() {
         return (
