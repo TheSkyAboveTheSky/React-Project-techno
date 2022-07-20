@@ -12,7 +12,7 @@ const cookieParser = require('cookie-parser');
 
 
 const corsOptions ={
-    origin:'http://localhost:3001', 
+    origin:'http://localhost:3000', 
     credentials:true,           
     optionSuccessStatus:200
 }
@@ -31,7 +31,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
-
 connectDB();
 
 
@@ -39,7 +38,7 @@ app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/send-email', require('./routes/mail'));
 app.use('/api/todo',todoRouter)
-
+app.use('/tickets',require('./routes/tickets'))
 app.use(verifyJWT);
 app.use(userRouter);
 

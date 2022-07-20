@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import './App.css';
 import Login from '../Login/Login';
 import Admin from '../Admin/Admin';
+import TicketsList from '../TicketsList/TicketsList';
 import Register from '../Register/Register';
 import ProtectedRoutes from '../ProtectedRoutes/ProtectedRoutes';
+import TicketDetails from '../TicketDetails/TicketDetails';
 import UnAuthorized from '../UnAuthorized/UnAuthorized';
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home';
@@ -28,7 +30,8 @@ function App() {
             <ProtectedRoutes path='/todo-list' component={TodoList} />
             <ProtectedRoutes path='/todo-add' component={Form} />
             <ProtectedRoutes path='/users' component={Admin} />
-            <Route path='/unAuthorized' component={UnAuthorized} />
+            <ProtectedRoutes path="/tickets" component={TicketsList}></ProtectedRoutes>
+            <ProtectedRoutes path="/ticket/:id" component={TicketDetails}></ProtectedRoutes>
           </div>
         </ Fragment>
       </Switch>
