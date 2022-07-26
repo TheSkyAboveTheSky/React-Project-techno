@@ -31,7 +31,7 @@ const Form = () => {
             avatar,
             progress
         }
-        fetch("http://localhost:3000/api/todo", {
+        fetch("http://localhost:3001/api/todo", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -112,7 +112,7 @@ const Form = () => {
                                        class="form-control" 
                                        id="task-description" 
                                        onChange={(e) => setDescription(e.target.value)} 
-                                       placeholder="Task Name"/>
+                                       placeholder="Task Description"/>
                             </div>
                         </div>
                         <div class="form-group row">
