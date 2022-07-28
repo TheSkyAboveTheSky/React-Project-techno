@@ -20,9 +20,16 @@ export default class ProtectedRoutes extends Component {
         else if (this.props.path === '/users') {
           return (<Route path={this.props.path} component={this.props.component} />)
         }
-        //  else if (this.props.path === '/unAuthorized' && jwtDecode(token).UserInfo.roles[0] === '0000') {
-        //   return (<Route path={this.props.path} component={this.props.component} />)
-        // }
+        else if (this.props.path === '/chat') {
+          return (<Route path={this.props.path} component={this.props.component} />)
+        }
+         else if (this.props.path === '/contact') {
+          return (<Route path={this.props.path} component={this.props.component} />)
+        }
+        else if (this.props.path === '/contact-add') {
+          return (<Route path={this.props.path} component={this.props.component} />)
+        }
+
 
       }
     } catch (error) {

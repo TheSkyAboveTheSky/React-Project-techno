@@ -10,7 +10,10 @@ import Home from '../Home/Home';
 import TodoList from '../TodoList/TodoList';
 import Form from '../Form/Form';
 import Header from '../Header/Header';
+import Chat from '../Chat/Chat';
+import Contact from '../Contact/Contact';
 import { Fragment } from 'react';
+import ContactAdd from '../ContactAdd/ContactAdd';
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
             <ProtectedRoutes path='/todo-list' component={TodoList} />
             <ProtectedRoutes path='/todo-add' component={Form} />
             <ProtectedRoutes path='/users' component={Admin} />
+            <ProtectedRoutes path='/chat' component={Chat} />
+            <ProtectedRoutes path='/contact' component={Contact} />
+            <ProtectedRoutes path='/contact-add' component={ContactAdd} />
             <Route path='/unAuthorized' component={UnAuthorized} />
           </div>
         </ Fragment>

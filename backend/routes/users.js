@@ -4,7 +4,8 @@ const userRouter = Router();
 const verifyRoles = require('../middlewares/verifyRoles');
 
 userRouter.get('/users',verifyRoles("1010"), userController.getAllUsers);
-userRouter.get('/users/:id',verifyRoles("4040"), userController.getUser);
+userRouter.get('/users/:id',verifyRoles("1010"), userController.getUser);
 userRouter.put('/updateuser/:id',verifyRoles("1010"), userController.updateUser);
+userRouter.get('/friends/:id',verifyRoles("1010"), userController.getFriends);
 
 module.exports = userRouter;
