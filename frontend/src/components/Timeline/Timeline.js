@@ -17,37 +17,37 @@ function Timeline() {
   }
   ,[])
   return (
-    <div className="timeline-container">
-          <table className="table spacing8 text-nowrap">
-                        <thead className="thead-light">
-                          <tr>
-                            <th>#</th>
-                            <th>Activity</th>
-                            <th>Time</th>
-                            <th>User</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {
-                            timelines.map((timeline,index) => {
-                              return (
-                                    <tr>
-                                      <td>{++index}</td>
-                                      <td>
-                                          <h6 className="mb-0">{timeline.body}</h6>
-                                      </td>
-                                      <td>
-                                          <div className="text-info">Due Date : {timeline.createdAt}</div>
-                                      </td>
-                                      <td>
-                                          <span className={"tag "}>{timeline.user}</span>
-                                      </td>
-                                    </tr>
-                              )
-                            })
-                          }
-                        </tbody>
-  </table>
+    <div>
+      <table className="table spacing8 text-nowrap">
+        <thead className="thead-light">
+          <tr>
+            <th>#</th>
+            <th>Activity</th>
+            <th>Time</th>
+            <th>User</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            timelines.map((timeline,index) => {
+              return (
+                        <tr>
+                            <td>{++index}</td>
+                            <td>
+                              <h6 className="mb-0">{timeline.body}</h6>
+                            </td>
+                            <td>
+                              <div className="text-info">Due Date : {timeline.createdAt}</div>
+                            </td>
+                            <td>
+                              <span className={"tag "}>{timeline.user}</span>
+                            </td>
+                        </tr>
+                    )
+            })
+          }
+        </tbody>
+      </table>
     </div>
   )
 }
