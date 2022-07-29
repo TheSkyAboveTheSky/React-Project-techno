@@ -1,0 +1,108 @@
+[
+  {
+    "_id": "62ce24fd57512c6e746e5fd6",
+    "username": "admin",
+    "roles": {
+      "Admin": "1010"
+    },
+    "email": "admin@technocolabs.com",
+    "password": "$2b$10$Poe7.yMvtXJpDb008SiO6OcJNynANFCZP/MmhNUA4OULid/JaDvnW",
+    "__v": 0
+  },
+  {
+    "_id": "62d28c4bb0f71458b72a4610",
+    "username": "ahmed ehab",
+    "roles": {
+      "Admin": "1010"
+    },
+    "email": "ahmedaboshama352@technocolabs.com",
+    "password": "$2b$10$rCYkDOY0XUlo/gookOLq4u/Ya6hrNWm5xjCinz4rkhIiKaZkjZBJ.",
+    "__v": 0
+  },
+  {
+    "_id": "62d6c254c0bc5d164cc87e5c",
+    "username": "Sheemy123",
+    "roles": {
+      "ProjectManager": "2020"
+    },
+    "email": "mahmoudalshemy.3@technocolabs.com",
+    "password": "$2b$10$Vah4P7NF7ASFqJ/YjWsc/OsOTkLKUDifyg7pzJQ62wBdg8oWW72Yi",
+    "__v": 0,
+    "blogs": [
+      "62e3ca9a8e0e086359fc58be",
+      "62e3cbd48e0e086359fc58c5",
+      "62e3cc3e8e0e086359fc58cb",
+      "62e3cdb28e0e086359fc58d6"
+    ]
+  },
+  {
+    "_id": "62d741928fdc15f9a28b7561",
+    "username": "omar",
+    "roles": {
+      "Admin": "1010"
+    },
+    "email": "adham@technocolabs.com",
+    "password": "$2b$10$/ykMXpThyjrgVXgHbwvb0eLY/pYoR5akYEqVy95XNv..csPVHxZOm",
+    "__v": 0
+  },
+  {
+    "_id": "62d850121e920e28695f6063",
+    "username": "omar farrag",
+    "roles": {
+      "Admin": "1010"
+    },
+    "email": "omar.alaa.farrag@technocolabs.com",
+    "password": "$2b$10$9DXIyHH1vgsHvHge/ZFdLu/ZTE9JynQSdpdFRfgBvJdgKRt5AM0l.",
+    "__v": 0
+  },
+  {
+    "_id": "62dad0ec2363c1b134aab800",
+    "username": "ouihraniossama",
+    "roles": {
+      "ProjectManager": "2020"
+    },
+    "email": "elouihrani7@technocolabs.com",
+    "password": "$2b$10$fwFXx1tK6ksTDa/rURsyReXGxSNOon/xIklVsbhQwOlkT/DULPpBa",
+    "__v": 0
+  },
+  {
+    "_id": "62dd0ef2a930fb37e073517d",
+    "username": "adham ahmed",
+    "roles": {
+      "Admin": "1010"
+    },
+    "email": "dodoadham652002@technocolabs.com",
+    "password": "$2b$10$Uec.6kVTdqevMP6S.kFepukvTjPymU297NEG8v6fKGUOIYsOzW0mO",
+    "__v": 0
+  },
+  {
+    "_id": "62dda73c6b4a7af014a0a410",
+    "username": "Ankit",
+    "roles": {
+      "ProjectManager": "2020"
+    },
+    "email": "akki56756@technocolabs.com",
+    "password": "$2b$10$keKmXWwdQyI0LSsT95OcAeJaV6GAXBmSxMu7tRXtG01ACNPweR/rm",
+    "__v": 0
+  },
+  {
+    "_id": "62de977cc03457cc1dfbde8f",
+    "username": "ElGazoly",
+    "roles": {
+      "Admin": "1010"
+    },
+    "email": "elgazoly@technocolabs.com",
+    "password": "$2b$10$6ZlB80KIdpc6eKkzcuxusuNrKnBEfBo0wOXpT8Q8Hg.K2DWLo5BmS",
+    "__v": 0
+  },
+  {
+    "_id": "62e407cb43fdcd5c54aff961",
+    "username": "Said",
+    "roles": {
+      "TeamLeader": "3030"
+    },
+    "email": "saidmounjisam@technocolabs.com",
+    "password": "$2b$10$VTivz0AnjG826.R9tVqzk.JzuoZZzxufgE0YeMwzWOTScR3DmUvhq",
+    "__v": 0
+  }
+]
