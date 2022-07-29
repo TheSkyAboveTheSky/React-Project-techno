@@ -10,7 +10,7 @@ export const Task = () => {
   const [tasks, setTasks] = useState([]);
   useEffect(() => {
       async function fetchData() {
-          const response = await axios.get('/tasks', { new: true });
+          const response = await axios.get('api/todo/tasks', { new: true });
           setTasks(response.data);
           return response;
       }

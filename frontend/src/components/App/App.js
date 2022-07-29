@@ -15,7 +15,7 @@ import Header from '../Header/Header';
 import { Fragment } from 'react';
 import Task from '../Tasks/Task';
 import AddTask from '../addTask/AddTask';
-
+import Timeline from '../Timeline/Timeline';
 function App() {
   return (
     <Router>
@@ -36,6 +36,7 @@ function App() {
             <ProtectedRoutes path="/ticket/:id" component={TicketDetails}></ProtectedRoutes>
             <Route path="/taskboard" component={Task} />
             <Route path="/add-task" component={AddTask} />
+            <Route path="/timeline" component={Timeline} />
           </div>
         </ Fragment>
       </Switch>

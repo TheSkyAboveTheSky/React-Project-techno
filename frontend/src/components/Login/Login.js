@@ -33,7 +33,7 @@ class Login extends Component {
             if (data.message === 'success') {
                 try {
                     let response = await axios.post('http://localhost:3001/timeline',{
-                        body : "logged in 27",
+                        body : "logged in",
                         user : data.id
                     });
                     console.log(response.data);
@@ -41,7 +41,7 @@ class Login extends Component {
                     alert('Can\'t create a new timeline');
                 }
                 localStorage.setItem('accessToken', data.accessToken);
-
+                localStorage.setItem('id', data.id);
                 if (data.roles.includes("0000")) {
                     this.props.history.replace('/unAuthorized');
                 }
@@ -55,10 +55,10 @@ class Login extends Component {
         catch (error) {
             alert('Invalid credentials');
         }
-
+        
     }
     
-
+    
     render() {
         return (
             <div className="limiter">
@@ -108,6 +108,5 @@ class Login extends Component {
         );
     }
 }
-
 
 export default Login;
