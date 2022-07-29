@@ -31,6 +31,7 @@ class Login extends Component {
                 password: this.state.password
             });
             if (data.message === 'success') {
+                console.log('Success!');
                 localStorage.setItem('accessToken', data.accessToken);
                 // localStorage.setItem('roles', data.roles);
                 // localStorage.setItem('name', data.name);
@@ -42,7 +43,7 @@ class Login extends Component {
                     this.props.history.replace('/home');
                 }
             } else {
-                alert('Invalid credentials');
+                alert('Invalid credentials'); 
             }
         }
         catch (error) {
