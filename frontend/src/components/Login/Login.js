@@ -31,11 +31,17 @@ class Login extends Component {
                 password: this.state.password
             });
             if (data.message === 'success') {
-                console.log('Success!');
+                try {
+                    let response = await axios.post('http://localhost:3001/timeline',{
+                        body : "logged in 27",
+                        user : data.id
+                    });
+                    console.log(response.data);
+                }catch(err) {
+                    alert('Can\'t create a new timeline');
+                }
                 localStorage.setItem('accessToken', data.accessToken);
-                // localStorage.setItem('roles', data.roles);
-                // localStorage.setItem('name', data.name);
-                // localStorage.setItem('email', data.email);
+
                 if (data.roles.includes("0000")) {
                     this.props.history.replace('/unAuthorized');
                 }
@@ -88,15 +94,6 @@ class Login extends Component {
                                     Login
                                 </button>
                             </div>
-
-                            {/* <div className="text-center p-t-12">
-                                <span className="txt1">
-                                    Forgot
-                                </span>
-                                <a className="txt2" href="#">
-                                    Username / Password?
-                                </a>
-                            </div> */}
 
                             <div className="text-center p-t-136">
                                 <a className="txt2" href="register">
