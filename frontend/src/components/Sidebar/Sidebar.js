@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Sidebar.css';
 import { NavLink } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
+import axios from 'axios';
 
 class Sidebar extends Component {
 
@@ -14,7 +15,12 @@ class Sidebar extends Component {
         }
     }
 
-    logout = () => {
+    logout = async () => {
+
+        let userid = jwtDecode(localStorage.getItem('accessToken')).UserInfo.id;
+        await axios.put(`http://localhost:3000/loginstatus/${userid}`, {
+            isLoggedIn: false
+        }, { headers: { 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` } })
         localStorage.clear();
     }
 

@@ -5,7 +5,8 @@ import axios from "axios";
 import './Chat.css';
 import { useEffect, useState, useRef } from 'react';
 import jwtDecode from 'jwt-decode';
-import {io} from 'socket.io-client';
+import { io } from 'socket.io-client';
+import Dropzone from 'react-dropzone';
 
 export default function Chat() {
 
@@ -23,14 +24,14 @@ export default function Chat() {
 
     useEffect(() => {
         socket.current = io('ws://localhost:8900');
-        socket.current.on("getMessage",data => {
+        socket?.current.on("getMessage", data => {
             setarrivalMessage({
                 sender: data.senderId,
                 text: data.text,
                 createdAt: Date.now()
             });
         })
-    },[])
+    }, [])
 
 
     useEffect(() => {
@@ -46,15 +47,15 @@ export default function Chat() {
 
     useEffect(() => {
         arrivalMessage && currentChat?.members.includes(arrivalMessage.sender) && setMessages((prev) => [...prev, arrivalMessage]);
-    },[arrivalMessage, currentChat])
+    }, [arrivalMessage, currentChat])
 
 
     useEffect(() => {
-        socket.current.emit('addUser', userid);
-        socket.current.on('getUsers', users => {
+        socket?.current.emit('addUser', userid);
+        socket?.current.on('getUsers', users => {
             setOnlineUsers(friends.filter(f => users.includes(f._id)));
         })
-    },[])
+    }, [])
 
     useEffect(() => {
         const getConversations = async () => {
@@ -90,9 +91,9 @@ export default function Chat() {
             conversationId: currentChat?._id,
         };
 
-        const receiverId = currentChat?.members.find(member=> member !== userid);
+        const receiverId = currentChat?.members.find(member => member !== userid);
 
-        socket.current.emit('sendMessage', {
+        socket?.current.emit('sendMessage', {
             senderId: userid,
             receiverId,
             text: newMessage
@@ -102,6 +103,7 @@ export default function Chat() {
             const res = await axios.post('http://localhost:3000/api/messages', message);
             setMessages([...messages, res.data]);
             setNewMessage('');
+            // console.log(res.data);
         }
         catch (err) {
             console.log(err);
@@ -109,9 +111,48 @@ export default function Chat() {
     };
 
 
+
+
+    const onDrop = async (files) => {
+
+        let formData = new FormData();
+        const config = {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        }
+        formData.append('file', files[0]);
+        await axios.post('http://localhost:3000/api/image/single', formData, config).then(res => {
+            if (res.data.success) {
+                const message = {
+                    sender: userid,
+                    text: res.data.url,
+                    conversationId: currentChat?._id,
+                };
+
+                const receiverId = currentChat?.members.find(member => member !== userid);
+
+                socket?.current.emit('sendMessage', {
+                    senderId: userid,
+                    receiverId,
+                    text: res.data.url
+                });
+
+                try {
+                    axios.post('http://localhost:3000/api/messages', message).then(res => {
+                        setMessages([...messages, res.data]);
+                        setNewMessage('');
+                    })
+                }
+                catch (err) {
+                    console.log(err);
+                }
+            }
+        })
+
+    }
+
     useEffect(() => {
         scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
-    },[messages])
+    }, [messages])
 
     return (
         <div className="messenger">
@@ -132,14 +173,23 @@ export default function Chat() {
                             <>
                                 <div className="chatBoxTop">
                                     {messages.map(m => (
-                                        <div ref ={scrollRef}>
+                                        <div ref={scrollRef}>
                                             <Message message={m} own={m.sender === userid} />
                                         </div>
                                     ))}
                                 </div>
                                 <div className="chatBoxBottom">
+                                    <Dropzone onDrop={onDrop}>
+                                        {({ getRootProps, getInputProps }) => (
+                                            <section>
+                                                <div {...getRootProps()}>
+                                                    <input {...getInputProps()} />
+                                                    <i class="fa fa-upload" aria-hidden="true"></i>
+                                                </div>
+                                            </section>
+                                        )}
+                                    </Dropzone>
                                     <textarea placeholder="Type a message..." className="chatMessageInput" onChange={(e) => setNewMessage(e.target.value)} value={newMessage}></textarea>
-                                    <input className="fa fa-paperclip" aria-hidden="true" type="file" id="myFile" name="filename" />
                                     <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
                                 </div></> : <span className='noConversationText'>Open a Conversation to open a chat</span>}
                 </div>

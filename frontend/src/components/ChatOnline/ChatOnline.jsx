@@ -19,7 +19,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
 
 
     useEffect(() => {
-        setOnlineFriends(friends.filter((f) => friends.some((u) => u._id === f._id )));
+        setOnlineFriends(friends.filter((f) => friends.some((u) => u._id === f._id)));
     }, [friends, onlineUsers])
 
     const handleClick = async (user) => {
@@ -47,7 +47,7 @@ export default function ChatOnline({ onlineUsers, currentId, setCurrentChat }) {
                 <div className="chatOnlineFriend" onClick={()=>handleClick(o)}>
                     <div className="chatOnlineImgContainer">
                         <img className='chatOnlineImg' src={img} alt="" />
-                        <div className="chatOnlineBadge"></div>
+                        <div className={o.isLoggedIn ? "chatOnlineBadge" : "chatOfflineBadge"}></div>
                     </div>
                     <div className="chatOnlineName">{o?.username}</div>
                 </div>

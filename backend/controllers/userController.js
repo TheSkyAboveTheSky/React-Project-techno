@@ -39,3 +39,10 @@ module.exports.getFriends = (req, res) => {
         .then(users => { res.json(users) }
         ).catch(err => { res.json(err) });
 }
+
+module.exports.updateLoginStatus = async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (!user) return res.sendStatus(404);
+    user.isLoggedIn = req.body.isLoggedIn;
+    user.save().then(user => { res.json(user) }).catch(err => { res.json(err) });
+}

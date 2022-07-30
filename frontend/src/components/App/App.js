@@ -21,7 +21,8 @@ function App() {
       <Switch>
         <Route path='/register' component={Register} />
         <Route path='/login' component={Login} />
-        <Redirect exact from='/' to='/login' />
+        {localStorage.getItem('accessToken') ?  <Redirect exact from='/' to='/home' /> :  <Redirect exact from='/' to='/login' />}
+        {/* <Redirect exact from='/' to='/login' /> */}
         {/* <ProtectedRoutes exact path='*' component={NotFound} /> */}
         <Fragment>
           <Header />
