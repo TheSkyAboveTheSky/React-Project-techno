@@ -2,9 +2,8 @@ import React , {useEffect , useState} from 'react'
 import axios from '../Axios/axios'
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
-import './Timeline.css'
 import dateFormat from 'dateformat';
-function Timeline() {
+function TimelineTask() {
   const [timelines,setTimelines] = useState([]);
   const [id,setId] = useState(window.localStorage.getItem('id'));
   
@@ -40,30 +39,28 @@ function Timeline() {
             <th>#</th>
             <th>Activity</th>
             <th>Time</th>
-            <th>created At</th>
+            <th>Created At</th>
           </tr>
         </thead>
         <tbody>
           {
             timelines.map((timeline,index) => {
-              if (timeline.type === 1 )
-              {
+              if (timeline.type == 2){
                 TimeAgo.addDefaultLocale(en)
                 const timeAgo = new TimeAgo('en-US')
-
                 return (
-                          <tr>
-                              <td>{++index}</td>
-                              <td>
-                                <h6 className="mb-0">{timeline.body}</h6>
-                              </td>
-                              <td>
-                                <div className="text-info">{timeAgo.format(new Date(timeline.createdAt))}</div>
-                              </td>
-                              <td>
-                                <div className="text-info">Created At: {dateFormat(timeline.createdAt,"dd-mm-yyyy")}</div>
-                              </td>
-                          </tr>
+                                <tr>
+                                    <td>{++index}</td>
+                                    <td>
+                                      <h6 className="mb-0">{timeline.body}</h6>
+                                    </td>
+                                    <td>
+                                      <div className="text-info">{timeAgo.format(new Date(timeline.createdAt))}</div>
+                                    </td>
+                                    <td>
+                                      <div className="text-info">Created At: {dateFormat(timeline.createdAt,"dd-mm-yyyy")}</div>
+                                    </td>
+                                </tr>  
                       )
               }
             })
@@ -75,4 +72,4 @@ function Timeline() {
   )
 }
 
-export default Timeline
+export default TimelineTask

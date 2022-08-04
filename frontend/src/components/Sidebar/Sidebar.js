@@ -27,6 +27,7 @@ class Sidebar extends Component {
                         <li className="g_heading">Project</li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="home"><i className="fa fa-dashboard"></i><span>Dashboard</span></NavLink>
                         </li>
+                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="timeline"><i className="fa fa-dashboard"></i><span>Timeline</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="project-list"><i className="fa fa-list-ol"></i><span>Project list</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="taskboard"><i
                             className="fa fa-calendar-check-o"></i><span>Taskboard</span></NavLink></li>
@@ -63,6 +64,7 @@ class Sidebar extends Component {
                         <li className="g_heading">Project</li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="home"><i className="fa fa-dashboard"></i><span>Dashboard</span></NavLink>
                         </li>
+                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="timeline"><i className="fa fa-dashboard"></i><span>Timeline</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="project-list"><i className="fa fa-list-ol"></i><span>Project list</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="taskboard"><i
                             className="fa fa-calendar-check-o"></i><span>Taskboard</span></NavLink></li>
@@ -87,6 +89,7 @@ class Sidebar extends Component {
                         <li className="g_heading">Project</li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="home"><i className="fa fa-dashboard"></i><span>Dashboard</span></NavLink>
                         </li>
+                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="timeline"><i className="fa fa-dashboard"></i><span>Timeline</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="project-list"><i className="fa fa-list-ol"></i><span>Project list</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="taskboard"><i
                             className="fa fa-calendar-check-o"></i><span>Taskboard</span></NavLink></li>
@@ -119,6 +122,7 @@ class Sidebar extends Component {
                         <li className="g_heading">Project</li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="home"><i className="fa fa-dashboard"></i><span>Dashboard</span></NavLink>
                         </li>
+                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="timeline"><i className="fa fa-dashboard"></i><span>Timeline</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="ticket-list"><i className="fa fa-list-ul"></i><span>Ticket List</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="project-ticket-details.html"><i className="icon-tag"></i><span>Ticket Details</span></NavLink>
                         </li>

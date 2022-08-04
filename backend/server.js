@@ -38,9 +38,9 @@ app.use('/auth', require('./routes/auth'));
 app.use('/send-email', require('./routes/mail'));
 app.use('/api/todo',todoRouter)
 app.use('/tickets',require('./routes/tickets'))
+app.use(userRouter);
 app.use(timelineRouter);
 app.use(verifyJWT);
-app.use(userRouter);
 
 
 

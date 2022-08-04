@@ -16,6 +16,7 @@ timelineRouter.post('/timeline', async (req,res) => {
   const timeline = new Timeline({
     body : req.body.body,
     user : req.body.user,
+    type : req.body.type,
   })
   try {
     const newTimeline = await timeline.save()

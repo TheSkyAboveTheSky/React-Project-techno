@@ -1,7 +1,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import Navbar from "../Navbar/Navbar";
-
+import axios from "../Axios/axios";
 const Form = () => {
     const [name, setName] = useState("");
     const [progress, setProgress] = useState(0);
@@ -18,10 +18,9 @@ const Form = () => {
     }, [teamRef]);
 
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsPending(true);
-        // console.log(name, priorityRef.current.value, teamRef.current.value, description, dueDate);
         const task = {
             name,
             priority: priorityRef.current.value,
@@ -31,18 +30,28 @@ const Form = () => {
             avatar,
             progress
         }
-        fetch("http://localhost:3001/api/todo", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(task)
-        })
-            .then(data => {
-                setIsPending(false);
-                alert("Task added successfully");
-            })
-            .catch(err => console.log(err))
+        try {
+            const response = await axios.post("/api/todo", task);
+            alert("Task Created Successfully");
+            try {
+                let response1 = await axios.get('http://localhost:3001/users');
+                const users = await response1.data;
+                users.forEach(async user => {
+                    if (user.team === teamRef.current.value) {
+                            const response3 = await axios.post('http://localhost:3001/timeline',{
+                                body : `You have been added as a member of the ${teamRef.current.value} team to the Task: ${name}`,
+                                user : user._id,
+                                type :  2
+                            });
+                            console.log(user._id);
+                        }
+                });
+            }catch(err) {
+                console.log(err);
+            }
+        }catch(err){
+            console.log(err);
+        }
 
     }
 

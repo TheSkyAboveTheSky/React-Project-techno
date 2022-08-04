@@ -16,6 +16,7 @@ import { Fragment } from 'react';
 import Task from '../Tasks/Task';
 import AddTask from '../addTask/AddTask';
 import Timeline from '../Timeline/Timeline';
+import TimelineTask from '../Timeline/TimelineTask';
 function App() {
   return (
     <Router>
@@ -37,6 +38,8 @@ function App() {
             <Route path="/taskboard" component={Task} />
             <Route path="/add-task" component={AddTask} />
             <Route path="/timeline" component={Timeline} />
+            <Route path="/timeline-Task" component={TimelineTask} />
+
           </div>
         </ Fragment>
       </Switch>
