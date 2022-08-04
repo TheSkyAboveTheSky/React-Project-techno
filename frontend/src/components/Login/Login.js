@@ -34,7 +34,8 @@ class Login extends Component {
                 try {
                     let response = await axios.post('http://localhost:3001/timeline',{
                         body : "You've been logged in",
-                        user : data.id
+                        user : data.id,
+                        type :  1
                     });
                     console.log(response.data);
                 }catch(err) {
