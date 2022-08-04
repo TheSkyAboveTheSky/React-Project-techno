@@ -9,6 +9,7 @@ const userSchema = new Schema({
         enum: ["1010", "2020", "3030", "4040"],
         required: false
     },
+    team : {type: mongoose.Schema.Types.ObjectId, ref: 'Team'},
     email: String,
     password: String
 },
