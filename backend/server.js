@@ -9,8 +9,7 @@ const todoRouter = require('./routes/todo');
 const connectDB = require('./config/db');
 const verifyJWT = require('./middlewares/verifyJWT');
 const cookieParser = require('cookie-parser');
-
-
+const timelineRouter = require('./routes/timelines');
 const corsOptions ={
     origin:'http://localhost:3000', 
     credentials:true,           
@@ -39,9 +38,9 @@ app.use('/auth', require('./routes/auth'));
 app.use('/send-email', require('./routes/mail'));
 app.use('/api/todo',todoRouter)
 app.use('/tickets',require('./routes/tickets'))
+app.use(timelineRouter);
 app.use(verifyJWT);
 app.use(userRouter);
-
 
 
 

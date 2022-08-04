@@ -10,7 +10,7 @@ const TodoList = () => {
     const [teams, setTeams] = useState([]);
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get('/tasks', { new: true });
+            const response = await axios.get('api/todo/tasks', { new: true });
             setTasks(response.data);
             return response;
         }
@@ -19,7 +19,7 @@ const TodoList = () => {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await axios.get('/teams');
+            const response = await axios.get('api/todo/teams');
             setTeams(response.data);
             return response;
         }

@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 
-<!-- Mirrored from nsdbytes.com/template/soccer/project/project-taskboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Dec 2021 18:22:37 GMT -->
+<!-- Mirrored from nsdbytes.com/template/soccer/project/page-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Dec 2021 18:22:35 GMT -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
-<title>:: Soccer :: Project TaskBoard</title>
+<title>:: Soccer :: Page Profile</title>
 
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
-<link rel="stylesheet" href="../assets/plugins/nestable/jquery-nestable.css" />
+<link rel="stylesheet" href="../assets/plugins/summernote/dist/summernote.css" />
+<link rel="stylesheet" href="../assets/plugins/fullcalendar/fullcalendar.min.css">
 
 <link rel="stylesheet" href="../assets/css/main.css" />
 <link rel="stylesheet" href="../assets/css/theme1.css" />
@@ -61,8 +61,8 @@
 <span class="custom-control-label">Robot Google Font</span>
 </label>
 </div>
- </div>
-<hr>
+</div>
+ <hr>
 <div class="mb-4">
 <h6 class="font-14 font-weight-bold text-muted">Dropdown Menu Icon</h6>
 <div class="custom-controls-stacked arrow_option">
@@ -125,7 +125,7 @@
 <span class="custom-switch-description">Min Sidebar Dark</span>
 <input type="checkbox" name="custom-switch-checkbox" class="custom-switch-input btn-min_sidebar">
 <span class="custom-switch-indicator"></span>
-</label>
+ </label>
 </li>
 <li>
 <label class="custom-switch">
@@ -206,7 +206,7 @@
 <div class="card-body">
 <a href="page-profile.html"><img class="card-profile-img" src="../assets/images/sm/avatar1.jpg" alt=""></a>
 <h6 class="mb-0">Peter Richards</h6>
-<span><a href="https://nsdbytes.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a6d6c3d2c3d488d4cfc5cec7d4c2e6c1cbc7cfca88c5c9cb">[email&#160;protected]</a></span>
+<span><a href="https://nsdbytes.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86f6e3f2e3f4a8f4efe5eee7f4e2c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</a></span>
 <div class="d-flex align-items-baseline mt-3">
 <h3 class="mb-0 mr-2">9.8</h3>
 <p class="mb-0"><span class="text-success">1.6% <i class="fa fa-arrow-up"></i></span></p>
@@ -270,8 +270,8 @@
 <li>
 <div class="bullet green"></div>
 <div class="time">2:38pm</div>
-<div class="desc"> 
-<h3>Finish</h3>
+<div class="desc">
+ <h3>Finish</h3>
 <h4>Go to Home</h4>
 </div>
 </li>
@@ -285,7 +285,7 @@
 <li class="g_heading">Project</li>
 <li><a href="index.html"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
 <li><a href="project-list.html"><i class="fa fa-list-ol"></i><span>Project list</span></a></li>
-<li class="active"><a href="project-taskboard.html"><i class="fa fa-calendar-check-o"></i><span>Taskboard</span></a></li>
+<li><a href="project-taskboard.html"><i class="fa fa-calendar-check-o"></i><span>Taskboard</span></a></li>
 <li><a href="project-ticket.html"><i class="fa fa-list-ul"></i><span>Ticket List</span></a></li>
 <li><a href="project-ticket-details.html"><i class="icon-tag"></i><span>Ticket Details</span></a></li>
 <li><a href="project-clients.html"><i class="fa fa-user"></i><span>Clients</span></a></li>
@@ -319,7 +319,7 @@
 <div class="page-header">
 <div class="left">
 <a href="javascript:void(0)" class="icon menu_toggle mr-3"><i class="fa  fa-align-left"></i></a>
-<h1 class="page-title">TaskBoard</h1>
+<h1 class="page-title">My Profile</h1>
 </div>
 <div class="right">
 <div class="input-icon xs-hide mr-4">
@@ -329,7 +329,7 @@
 <div class="notification d-flex">
 <div class="dropdown d-flex">
 <a class="nav-link icon d-none d-md-flex btn btn-default btn-icon ml-2" data-toggle="dropdown"><i class="fa fa-language"></i></a>
-<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+ <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
 <a class="dropdown-item" href="#"><img class="w20 mr-2" src="https://nsdbytes.com/template/soccer/assets/images/flags/us.svg">English</a>
 <div class="dropdown-divider"></div>
 <a class="dropdown-item" href="#"><img class="w20 mr-2" src="https://nsdbytes.com/template/soccer/assets/images/flags/es.svg">Spanish</a>
@@ -375,7 +375,7 @@
 </a>
 </li>
 <li class="online">
-<a href="javascript:void(0);" class="media">
+ <a href="javascript:void(0);" class="media">
 <img class="media-object " src="../assets/images/xs/avatar3.jpg" alt="">
 <div class="media-body">
 <span class="name">Phillip Smith</span>
@@ -451,272 +451,160 @@
 </div>
 </div>
 </div>
-<div class="section-body">
+<div class="section-body mt-4">
 <div class="container-fluid">
-<div class="row">
-<div class="col-md-12">
-<div class="d-md-flex justify-content-between align-items-center">
-<ul class="nav nav-tabs page-header-tab">
-<li class="nav-item"><a class="nav-link active" id="TaskBoard-tab" data-toggle="tab" href="#TaskBoard-list">List View</a></li>
-<li class="nav-item"><a class="nav-link" id="TaskBoard-tab" data-toggle="tab" href="#TaskBoard-grid">Grid View</a></li>
-</ul>
-<div class="header-action d-flex">
-<div class="input-group mr-2">
-<input type="text" class="form-control" placeholder="Search...">
-</div>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addtask"><i class="fe fe-plus mr-2"></i>Add</button>
-</div>
-</div>
-</div>
-</div>
-<div class="row clearfix mt-2">
-<div class="col-lg-3 col-md-6">
-<div class="card">
-<div class="card-body text-center">
-<h6>Planned</h6>
-<input type="text" class="knob" value="23" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#6e7687">
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-6">
-<div class="card">
-<div class="card-body text-center">
-<h6>In progress</h6>
-<input type="text" class="knob" value="43" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#6e7687">
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-6">
-<div class="card">
-<div class="card-body text-center">
-<h6>Completed</h6>
-<input type="text" class="knob" value="83" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#6e7687">
-</div>
-</div>
-</div>
-<div class="col-lg-3 col-md-6">
-<div class="card">
-<div class="card-body text-center">
-<h6>In Completed</h6>
-<input type="text" class="knob" value="12" data-width="90" data-height="90" data-thickness="0.1" data-fgColor="#6e7687">
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section-body">
-<div class="container-fluid">
-<div class="tab-content taskboard">
-<div class="tab-pane fade show active" id="TaskBoard-list" role="tabpanel">
-<div class="row">
-<div class="col-md-12">
-<div class="table-responsive">
-<table class="table table-hover table-vcenter mb-0 table_custom spacing8 text-nowrap">
-<thead>
-<tr>
-<th>#</th>
-<th>Task</th>
-<th>Team</th>
-<th>Duration</th>
-<th>Action</th>
-<th class="w200"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>01</td>
-<td>
-<h6 class="mb-0">New code Update on github</h6>
-<span>It is a long established fact that a reader will be distracted...</span>
-</td>
-<td>
-<ul class="list-unstyled team-info mb-0">
-<li><img src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-</ul>
-</td>
-<td>
-<div class="text-info">Start: 3 Jun 2019</div>
-<div class="text-pink">End: 15 Jun 2019</div>
- </td>
-<td>
-<span class="tag tag-blue">Planned</span>
-</td>
-<td>
-<div class="clearfix">
-<div class="float-left"><strong>0%</strong></div>
-<div class="float-right"><small class="text-muted">Progress</small></div>
-</div>
-<div class="progress progress-xs">
-<div class="progress-bar bg-azure" role="progressbar" style="width: 0%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</td>
-</tr>
-<tr>
-<td>02</td>
-<td>
-<h6 class="mb-0">Design Events</h6>
-<span>It is a long established fact that a reader will be distracted...</span>
-</td>
-<td>
-<ul class="list-unstyled team-info mb-0">
-<li><img src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-</ul>
-</td>
-<td>
-<div class="text-info">Start: 02 Jun 2019</div>
-<div class="text-pink">End: 08 Jun 2019</div>
-</td>
-<td>
-<span class="tag tag-green">Completed</span>
-</td>
-<td>
-<div class="clearfix">
-<div class="float-left"><strong>100%</strong></div>
-<div class="float-right"><small class="text-muted">Progress</small></div>
-</div>
-<div class="progress progress-xs">
-<div class="progress-bar bg-green" role="progressbar" style="width: 100%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</td>
-</tr>
-<tr>
-<td>03</td>
-<td>
-<h6 class="mb-0">Feed Details on Dribbble</h6>
-<span>The point of using Lorem Ipsum is that...</span>
-</td>
-<td>
-<ul class="list-unstyled team-info mb-0">
-<li><img src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-</ul>
-</td>
-<td>
-<div class="text-info">Start: 3 Jun 2019</div>
-<div class="text-pink">End: 15 Jun 2019</div>
-</td>
-<td>
-<span class="tag tag-orange">In progress</span>
-</td>
-<td>
-<div class="clearfix">
-<div class="float-left"><strong>35%</strong></div>
-<div class="float-right"><small class="text-muted">Progress</small></div>
-</div>
-<div class="progress progress-xs">
-<div class="progress-bar bg-azure" role="progressbar" style="width: 35%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</td>
-</tr>
-<tr>
-<td>04</td>
-<td>
-<h6 class="mb-0">New code Update on github</h6>
-<span>It is a long established fact that a reader will be distracted...</span>
-</td>
-<td>
-<ul class="list-unstyled team-info mb-0">
-<li><img src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar3.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar7.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-</ul>
-</td>
-<td>
-<div class="text-info">Start: 13 Jun 2019</div>
-<div class="text-pink">End: 23 Jun 2019</div>
-</td>
-<td>
-<span class="tag tag-orange">In progress</span>
-</td>
- <td>
-<div class="clearfix">
-<div class="float-left"><strong>75%</strong></div>
-<div class="float-right"><small class="text-muted">Progress</small></div>
-</div>
-<div class="progress progress-xs">
-<div class="progress-bar bg-green" role="progressbar" style="width: 75%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</td>
-</tr>
-<tr>
-<td>05</td>
-<td>
-<h6 class="mb-0">New code Update on github</h6>
-<span>Contrary to popular belief, Lorem Ipsum is not simply random text.</span>
-</td>
-<td>
-<ul class="list-unstyled team-info mb-0">
-<li><img src="../assets/images/xs/avatar4.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar7.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-</ul>
-</td>
-<td>
-<div class="text-info">Start: 8 Jun 2019</div>
-<div class="text-pink">End: 15 Jun 2019</div>
-</td>
-<td>
-<span class="tag tag-orange">In progress</span>
-</td>
-<td>
-<div class="clearfix">
-<div class="float-left"><strong>35%</strong></div>
-<div class="float-right"><small class="text-muted">Progress</small></div>
-</div>
-<div class="progress progress-xs">
-<div class="progress-bar bg-azure" role="progressbar" style="width: 35%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</td>
-</tr>
-<tr>
-<td>06</td>
-<td>
-<h6 class="mb-0">Angular App Design bug</h6>
-<span>There are many variations of passages of Lorem Ipsum available...</span>
- </td>
-<td>
-<ul class="list-unstyled team-info mb-0">
-<li><img src="../assets/images/xs/avatar3.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar4.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar7.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-</ul>
-</td>
-<td>
-<div class="text-info">Start: 3 Jun 2019</div>
-<div class="text-pink">End: 15 Jun 2019</div>
-</td>
-<td>
-<span class="tag tag-orange">Planned</span>
-</td>
-<td>
-<div class="clearfix">
-<div class="float-left"><strong>35%</strong></div>
-<div class="float-right"><small class="text-muted">Progress</small></div>
-</div>
-<div class="progress progress-xs">
-<div class="progress-bar bg-azure" role="progressbar" style="width: 35%" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="tab-pane fade" id="TaskBoard-grid" role="tabpanel">
 <div class="row clearfix">
 <div class="col-lg-4 col-md-12">
-<div class="card planned_task">
+<div class="card">
+<img class="card-img-top" src="../assets/images/gallery/6.jpg" alt="Card image cap">
+<div class="card-body">
+<h5 class="card-title">Peter Richards</h5>
+<p class="card-text">795 Folsom Ave, Suite 600 San Francisco, 94107</p>
+<div class="row">
+<div class="col-4">
+<h6><strong>3265</strong></h6>
+<span>Post</span>
+</div>
+<div class="col-4">
+<h6><strong>1358</strong></h6>
+<span>Followers</span>
+</div>
+<div class="col-4">
+<h6><strong>10K</strong></h6>
+<span>Likes</span>
+</div>
+</div>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item"><a href="https://nsdbytes.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6c6d3c2d3c4f6d1dbd7dfda98d5d9db">[email&#160;protected]</a></li>
+<li class="list-group-item">+ 202-555-2828</li>
+<li class="list-group-item">October 22th, 1990</li>
+</ul>
+<div class="card-body">
+<a href="javascript:void(0);" class="card-link">View More</a>
+<a href="javascript:void(0);" class="card-link">Another link</a>
+</div>
+</div>
+<div class="card">
 <div class="card-header">
-<h3 class="card-title">Planned</h3>
+<h3 class="card-title">Followers</h3>
+<div class="card-options">
+<a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+</div>
+</div>
+<div class="card-body">
+<ul class="right_chat list-unstyled mb-0">
+<li class="online">
+<a href="javascript:void(0);">
+<div class="media">
+<img class="media-object " src="../assets/images/xs/avatar4.jpg" alt="">
+<div class="media-body">
+<span class="name">Donald Gardner</span>
+<span class="message">Designer, Blogger</span>
+<span class="badge badge-outline status"></span>
+</div>
+</div>
+</a>
+</li>
+<li class="online">
+<a href="javascript:void(0);">
+<div class="media">
+<img class="media-object " src="../assets/images/xs/avatar4.jpg" alt="">
+<div class="media-body">
+<span class="name">Donald Gardner</span>
+<span class="message">Designer, Blogger</span>
+<span class="badge badge-outline status"></span>
+</div>
+</div>
+</a>
+</li>
+<li class="offline">
+<a href="javascript:void(0);">
+<div class="media">
+<img class="media-object " src="../assets/images/xs/avatar1.jpg" alt="">
+<div class="media-body">
+<span class="name">Nancy Flanary</span>
+<span class="message">Art director, Movie Cut</span>
+<span class="badge badge-outline status"></span>
+</div>
+</div>
+</a>
+</li>
+<li class="online">
+<a href="javascript:void(0);">
+<div class="media">
+<img class="media-object " src="../assets/images/xs/avatar3.jpg" alt="">
+ <div class="media-body">
+<span class="name">Phillip Smith</span>
+<span class="message">Writter, Mag Editor</span>
+<span class="badge badge-outline status"></span>
+</div>
+</div>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-8 col-md-12">
+<div class="row">
+<div class="col-xl-4 col-lg-4 col-sm-6">
+<div class="card">
+<div class="card-body widgets1">
+<div class="icon">
+<i class="icon-trophy text-success font-30"></i>
+</div>
+<div class="details">
+<h6 class="mb-0 font600">Total Earned</h6>
+<span class="mb-0">$96K +</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-sm-6">
+<div class="card">
+<div class="card-body widgets1">
+<div class="icon">
+<i class="icon-heart text-warning font-30"></i>
+</div>
+<div class="details">
+<h6 class="mb-0 font600">Total Likes</h6>
+<span class="mb-0">6,270</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-xl-4 col-lg-4 col-sm-12">
+<div class="card">
+<div class="card-body widgets1">
+<div class="icon">
+<i class="icon-handbag text-danger font-30"></i>
+</div>
+<div class="details">
+<h6 class="mb-0 font600">Delivered</h6>
+<span class="mb-0">720 Delivered</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+<li class="nav-item">
+<a class="nav-link active" id="pills-blog-tab" data-toggle="pill" href="#pills-blog" role="tab" aria-controls="pills-blog" aria-selected="true">Blog</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="pills-timeline-tab" data-toggle="pill" href="#pills-timeline" role="tab" aria-controls="pills-timeline" aria-selected="true">Timeline</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</a>
+</li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+<div class="tab-pane fade" id="pills-timeline" role="tabpanel" aria-labelledby="pills-timeline-tab">
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">Activity</h3>
 <div class="card-options">
 <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
 <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
@@ -726,7 +614,7 @@
 <div class="dropdown-menu dropdown-menu-right">
 <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
 <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
- <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
+<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
 <div class="dropdown-divider"></div>
 <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
 <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
@@ -737,158 +625,198 @@
 </div>
 </div>
 <div class="card-body">
-<div class="dd" data-plugin="nestable">
-<ol class="dd-list">
-<li class="dd-item" data-id="1">
-<div class="dd-handle">
-<h6>Dashbaord</h6>
-<span class="time"><span class="text-primary">Start: 5 Aug</span> to <span class="text-danger">Complete: 15 Aug</span></span>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-<ul class="list-unstyled team-info">
-<li><img src="../assets/images/xs/avatar1.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar2.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
+<div class="timeline_item ">
+<img class="tl_avatar" src="../assets/images/xs/avatar1.jpg" alt="" />
+<span><a href="javascript:void(0);">Elisse Joson</a> San Francisco, CA <small class="float-right text-right">20-April-2019 - Today</small></span>
+<h6 class="font600">Hello, 'Im a single div responsive timeline without media Queries!</h6>
+<div class="msg">
+<p>I'm speaking with myself, number one, because I have a very good brain and I've said a lot of things. I write the best placeholder text, and I'm the biggest developer on the web card she has is the Lorem card.</p>
+<a href="javascript:void(0);" class="mr-20 text-muted"><i class="fa fa-heart text-pink"></i> 12 Love</a>
+<a class="text-muted" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-comments"></i> 1 Comment</a>
+<div class="collapse p-4 section-gray" id="collapseExample">
+ <form class="well">
+<div class="form-group">
+<textarea rows="2" class="form-control no-resize" placeholder="Enter here for tweet..."></textarea>
+</div>
+<button class="btn btn-primary">Submit</button>
+</form>
+<ul class="recent_comments list-unstyled mt-4 mb-0">
+<li>
+<div class="avatar_img">
+<img class="rounded img-fluid" src="../assets/images/xs/avatar4.jpg" alt="">
+</div>
+<div class="comment_body">
+<h6>Donald Gardner <small class="float-right font-14">Just now</small></h6>
+<p>Lorem ipsum Veniam aliquip culpa laboris minim tempor</p>
+</div>
+</li>
 </ul>
 </div>
-</li>
-<li class="dd-item" data-id="2">
-<div class="dd-handle">
-<h6>New project</h6>
-<span class="time"><span class="text-primary">Start: 6 Aug</span> to <span class="text-danger">Complete: 28 Aug</span></span>
-<p>It is a long established fact that a reader will be distracted.</p>
+</div>
+</div>
+<div class="timeline_item ">
+<img class="tl_avatar" src="../assets/images/xs/avatar4.jpg" alt="" />
+<span><a href="javascript:void(0);" title="">Dessie Parks</a> Oakland, CA <small class="float-right text-right">19-April-2019 - Yesterday</small></span>
+<h6 class="font600">Oeehhh, that's awesome.. Me too!</h6>
+<div class="msg">
+<p>I'm speaking with myself, number one, because I have a very good brain and I've said a lot of things. on the web by far... While that's mock-ups and this is politics, are they really so different? I think the only card she has is the Lorem card.</p>
+<div class="timeline_img mb-20">
+<img class="width100" src="../assets/images/gallery/1.jpg" alt="Awesome Image">
+<img class="width100" src="../assets/images/gallery/2.jpg" alt="Awesome Image">
+</div>
+<a href="javascript:void(0);" class="mr-20 text-muted"><i class="fa fa-heart text-pink"></i> 23 Love</a>
+<a class="text-muted" role="button" data-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1"><i class="fa fa-comments"></i> 2 Comment</a>
+<div class="collapse p-4 section-gray" id="collapseExample1">
+<form class="well">
+<div class="form-group">
+<textarea rows="2" class="form-control no-resize" placeholder="Enter here for tweet..."></textarea>
+</div>
+<button class="btn btn-primary">Submit</button>
+</form>
+ <ul class="recent_comments list-unstyled mt-4 mb-0">
+<li>
+<div class="avatar_img">
+<img class="rounded img-fluid" src="../assets/images/xs/avatar4.jpg" alt="">
+</div>
+<div class="comment_body">
+<h6>Donald Gardner <small class="float-right font-14">Just now</small></h6>
+<p>Lorem ipsum Veniam aliquip culpa laboris minim tempor</p>
+<div class="timeline_img mb-20">
+<img class="width150" src="../assets/images/gallery/7.jpg" alt="Awesome Image">
+<img class="width150" src="../assets/images/gallery/8.jpg" alt="Awesome Image">
+</div>
 </div>
 </li>
-<li class="dd-item" data-id="3">
-<div class="dd-handle">
-<h6>Feed Details</h6>
-<p>here are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
+<li>
+<div class="avatar_img">
+<img class="rounded img-fluid" src="../assets/images/xs/avatar3.jpg" alt="">
+</div>
+<div class="comment_body">
+<h6>Dessie Parks <small class="float-right font-14">1min ago</small></h6>
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking</p>
 </div>
 </li>
-</ol>
+</ul>
 </div>
+</div>
+</div>
+<div class="timeline_item ">
+<img class="tl_avatar" src="../assets/images/xs/avatar7.jpg" alt="" />
+<span><a href="javascript:void(0);" title="">Rochelle Barton</a> San Francisco, CA <small class="float-right text-right">12-April-2019</small></span>
+<h6 class="font600">An Engineer Explains Why You Should Always Order the Larger Pizza</h6>
+<div class="msg">
+<p>I'm speaking with myself, number one, because I have a very good brain and I've said a lot of things. I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, is the Lorem card.</p>
+<a href="javascript:void(0);" class="mr-20 text-muted"><i class="fa fa-heart text-pink"></i> 7 Love</a>
+<a class="text-muted" role="button" data-toggle="collapse" href="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2"><i class="fa fa-comments"></i> 1 Comment</a>
+<div class="collapse p-4 section-gray" id="collapseExample2">
+<form class="well">
+<div class="form-group">
+ <textarea rows="2" class="form-control no-resize" placeholder="Enter here for tweet..."></textarea>
+</div>
+<button class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+<div class="card">
+<div class="card-header">
+<h3 class="card-title">Edit Profile</h3>
+<div class="card-options">
+<a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+<div class="item-action dropdown ml-2">
+<a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
+<div class="dropdown-menu dropdown-menu-right">
+<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
+<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
+<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
+<div class="dropdown-divider"></div>
+<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
+<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
+<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
+<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+</div>
+</div>
+</div>
+</div>
+<div class="card-body">
+<div class="row clearfix">
+<div class="col-md-5">
+<div class="form-group">
+<label class="form-label">Company</label>
+<input type="text" class="form-control" disabled="" placeholder="Company" value="Epic Theme">
+</div>
+</div>
+<div class="col-sm-6 col-md-3">
+<div class="form-group">
+<label class="form-label">Username</label>
+<input type="text" class="form-control" placeholder="Username" value="michael23">
 </div>
  </div>
-</div>
-<div class="col-lg-4 col-md-12">
-<div class="card progress_task">
-<div class="card-header">
-<h3 class="card-title">In progress</h3>
-<div class="card-options">
-<a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-<a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
-<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-<div class="item-action dropdown ml-2">
-<a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
-<div class="dropdown-menu dropdown-menu-right">
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
-<div class="dropdown-divider"></div>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+<div class="col-sm-6 col-md-4">
+<div class="form-group">
+<label class="form-label">Email address</label>
+<input type="email" class="form-control" placeholder="Email">
 </div>
 </div>
+<div class="col-sm-6 col-md-6">
+<div class="form-group">
+<label class="form-label">First Name</label>
+<input type="text" class="form-control" placeholder="Company" value="Jane">
 </div>
 </div>
-<div class="card-body">
-<div class="dd" data-plugin="nestable">
-<ol class="dd-list">
-<li class="dd-item" data-id="1">
-<div class="dd-handle">
-<h6>New Code Update</h6>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+<div class="col-sm-6 col-md-6">
+<div class="form-group">
+<label class="form-label">Last Name</label>
+<input type="text" class="form-control" placeholder="Last Name" value="Pearson">
 </div>
-</li>
-<li class="dd-item" data-id="2">
-<div class="dd-handle">
-<h6>Meeting</h6>
-<span class="time"><span class="text-primary">Start: 5 Aug</span> to <span class="text-danger">Complete: 11 Aug</span></span>
-<p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero</p>
-<ul class="list-unstyled team-info">
-<li><img src="../assets/images/xs/avatar7.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar9.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-</ul>
 </div>
-</li>
-<li class="dd-item" data-id="2">
-<div class="dd-handle">
-<h6>New project</h6>
-<p>It is a long established fact that a reader will be distracted.</p>
+<div class="col-md-12">
+<div class="form-group">
+<label class="form-label">Address</label>
+<input type="text" class="form-control" placeholder="Home Address" value="455 S. Airport St. Moncks Corner">
 </div>
-</li>
-<li class="dd-item" data-id="3">
-<div class="dd-handle">
-<h6>Feed Details</h6>
-<p>here are many variations of passages of Lorem Ipsum available, but the majority have suffered.</p>
 </div>
-</li>
-</ol>
+<div class="col-sm-6 col-md-4">
+<div class="form-group">
+<label class="form-label">City</label>
+<input type="text" class="form-control" placeholder="City" value="New York">
+</div>
+</div>
+<div class="col-sm-6 col-md-3">
+<div class="form-group">
+<label class="form-label">Postal Code</label>
+<input type="number" class="form-control" placeholder="ZIP Code">
+</div>
+</div>
+<div class="col-md-5">
+<div class="form-group">
+<label class="form-label">Country</label>
+<select class="form-control custom-select">
+<option value="">USA</option>
+</select>
+</div>
+</div>
+<div class="col-md-12">
+<div class="form-group mb-0">
+<label class="form-label">About Me</label>
+<textarea rows="5" class="form-control" placeholder="Here can be your description">Oh so, your weak rhyme You doubt I'll bother, reading into it I'll probably won't, left to my own devices But that's the difference in our opinions.</textarea>
 </div>
 </div>
 </div>
 </div>
-<div class="col-lg-4 col-md-12">
-<div class="card completed_task">
-<div class="card-header">
-<h3 class="card-title">Completed</h3>
-<div class="card-options">
-<a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-<a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
-<a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-<div class="item-action dropdown ml-2">
-<a href="javascript:void(0)" data-toggle="dropdown"><i class="fe fe-more-vertical"></i></a>
-<div class="dropdown-menu dropdown-menu-right">
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-eye"></i> View Details </a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-share-alt"></i> Share </a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-cloud-download"></i> Download</a>
-<div class="dropdown-divider"></div>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-copy"></i> Copy to</a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-folder"></i> Move to</a>
-<a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-edit"></i> Rename</a>
- <a href="javascript:void(0)" class="dropdown-item"><i class="dropdown-icon fa fa-trash"></i> Delete</a>
+<div class="card-footer text-right">
+<button type="submit" class="btn btn-primary">Update Profile</button>
 </div>
 </div>
 </div>
-</div>
-<div class="card-body">
-<div class="dd" data-plugin="nestable">
-<ol class="dd-list">
-<li class="dd-item" data-id="1">
-<div class="dd-handle">
-<h6>Job title</h6>
-<p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-<ul class="list-unstyled team-info">
-<li><img src="../assets/images/xs/avatar4.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar5.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar6.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-<li><img src="../assets/images/xs/avatar8.jpg" data-toggle="tooltip" data-placement="top" title="Avatar" alt="Avatar"></li>
-</ul>
-</div>
-</li>
-<li class="dd-item" data-id="2">
-<div class="dd-handle">
-<h6>Event Done</h6>
-<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical</p>
-</div>
-</li>
-<li class="dd-item" data-id="1">
-<div class="dd-handle">
-<h6>New Code Update</h6>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- Start from here-->
+
 <div class="section-body">
 <footer class="footer">
 <div class="container-fluid">
@@ -909,68 +837,14 @@ Copyright © 2019 <a href="https://themeforest.net/user/admincraft/portfolio">ad
 </div>
 </div>
 </div>
-
-<div class="modal fade" id="addtask" tabindex="-1" role="dialog">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h6 class="title" id="defaultModalLabel">Add New Task</h6>
-</div>
-<div class="modal-body">
-<div class="row clearfix">
-<div class="col-12">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Task no.">
-</div>
-</div>
-<div class="col-12">
-<div class="form-group">
-<input type="text" class="form-control" placeholder="Job title">
-</div>
-</div>
-<div class="col-12">
-<div class="form-group">
-<textarea class="form-control" placeholder="Description"></textarea>
-</div>
-</div>
-<div class="col-12">
-<div class="form-group">
-<select class="form-control show-tick">
-<option>Select Team</option>
-<option>John Smith</option>
-<option>Claire Peters</option>
-<option>Allen Collins</option>
-<option>Cory Carter</option>
-<option>Rochelle Barton</option>
-</select>
-</div>
-</div>
-<div class="col-12">
-<label>Range</label>
-<div class="input-daterange input-group" data-provide="datepicker">
-<input type="text" class="form-control" name="start">
-<span class="input-group-addon"> to </span>
-<input type="text" class="form-control" name="end">
-</div>
-</div>
-</div>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-primary">Add</button>
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-</div>
-</div>
-</div>
-</div>
-<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../assets/bundles/lib.vendor.bundle.js" type="8e529625e2ac6a47f690892b-text/javascript"></script>
-<script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="8e529625e2ac6a47f690892b-text/javascript"></script>
-<script src="../assets/bundles/knobjs.bundle.js" type="8e529625e2ac6a47f690892b-text/javascript"></script>
-<script src="../assets/bundles/nestable.bundle.js" type="8e529625e2ac6a47f690892b-text/javascript"></script>
-<script src="../assets/js/core.js" type="8e529625e2ac6a47f690892b-text/javascript"></script>
-<script src="assets/js/page/sortable-nestable.js" type="8e529625e2ac6a47f690892b-text/javascript"></script>
-<script src="assets/js/chart/knobjs.js" type="8e529625e2ac6a47f690892b-text/javascript"></script>
-<script src="../../../cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="8e529625e2ac6a47f690892b-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v64f9daad31f64f81be21cbef6184a5e31634941392597" integrity="sha512-gV/bogrUTVP2N3IzTDKzgP0Js1gg4fbwtYB6ftgLbKQu/V8yH2+lrKCfKHelh4SO3DPzKj4/glTO+tNJGDnb0A==" data-cf-beacon='{"rayId":"6b9fc725dcce0ee0","version":"2021.11.0","r":1,"token":"f79813393a9345e8a59bb86abc14d67d","si":100}' crossorigin="anonymous"></script>
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../assets/bundles/lib.vendor.bundle.js" type="85a6e33e5a9aa25c6a098a54-text/javascript"></script>
+<script src="../assets/bundles/fullcalendar.bundle.js" type="85a6e33e5a9aa25c6a098a54-text/javascript"></script>
+<script src="../assets/bundles/knobjs.bundle.js" type="85a6e33e5a9aa25c6a098a54-text/javascript"></script>
+<script src="../assets/js/core.js" type="85a6e33e5a9aa25c6a098a54-text/javascript"></script>
+<script src="assets/js/page/calendar.js" type="85a6e33e5a9aa25c6a098a54-text/javascript"></script>
+<script src="assets/js/chart/knobjs.js" type="85a6e33e5a9aa25c6a098a54-text/javascript"></script>
+<script src="../../../cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="85a6e33e5a9aa25c6a098a54-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v64f9daad31f64f81be21cbef6184a5e31634941392597" integrity="sha512-gV/bogrUTVP2N3IzTDKzgP0Js1gg4fbwtYB6ftgLbKQu/V8yH2+lrKCfKHelh4SO3DPzKj4/glTO+tNJGDnb0A==" data-cf-beacon='{"rayId":"6b9fc71bbe596e93","version":"2021.11.0","r":1,"token":"f79813393a9345e8a59bb86abc14d67d","si":100}' crossorigin="anonymous"></script>
 </body>
 
-<!-- Mirrored from nsdbytes.com/template/soccer/project/project-taskboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Dec 2021 18:22:41 GMT -->
+<!-- Mirrored from nsdbytes.com/template/soccer/project/page-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Dec 2021 18:22:37 GMT -->
 </html>

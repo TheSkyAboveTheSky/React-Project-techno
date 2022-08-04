@@ -15,7 +15,7 @@ class Admin extends Component {
 
 
     getUsers = () => {
-        axios.get('http://localhost:3000/users', { headers: { "Authorization": `Bearer ${localStorage.getItem('accessToken')}` } }).then(res => {
+        axios.get('http://localhost:3001/users', { headers: { "Authorization": `Bearer ${localStorage.getItem('accessToken')}` } }).then(res => {
             this.setState({
                 users: res.data,
                 loading: true
@@ -29,7 +29,7 @@ class Admin extends Component {
 
     AssignRole = (userid, roleName, roleId) => {
         if (roleId !== '') {
-            axios.put(`http://localhost:3000/updateuser/${userid}`, {
+            axios.put(`http://localhost:3001/updateuser/${userid}`, {
                 roles: { [roleName]: roleId }
             }, { headers: { "Authorization": `Bearer ${localStorage.getItem('accessToken')}` } }).then(res => {
                 alert("Role assigned successfully");

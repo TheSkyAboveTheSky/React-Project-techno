@@ -23,6 +23,11 @@ const taskSchema = new mongoose.Schema({
     },
     avatar: {
         type : String,
+    },
+    progress:{
+        type : Number,
+        default:0,
+        required : true
     }
 
 })

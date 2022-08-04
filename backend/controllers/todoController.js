@@ -42,6 +42,7 @@ const getAllTeams = asynchandler(async (req, res) => {
 const addNewTask = asynchandler(async (req, res) => {
     const task = await Task.create({
         name: req.body.name,
+        progress: req.body.progress,
         priority: req.body.priority,
         team: req.body.team,
         description: req.body.description,
