@@ -33,7 +33,7 @@ class Login extends Component {
             if (data.message === 'success') {
                 try {
                     let response = await axios.post('http://localhost:3001/timeline',{
-                        body : "logged in",
+                        body : "You've been logged in",
                         user : data.id
                     });
                     console.log(response.data);
