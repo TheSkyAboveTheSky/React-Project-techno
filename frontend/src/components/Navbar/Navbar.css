@@ -26,18 +26,16 @@
     justify-content: center;
     padding: 1%;
   }
-  .card {
-    margin: 0 auto; /* Added */
+  /* .card {
+    margin: 0 auto;
     margin-top: 4%;
     margin-right: 2%;
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
-    postion: fixed;
-  
+    float: none; 
+    margin-bottom: 10px; 
     top: 26%;
     width: 70%;
     right: 10%;
-  }
+  } */
   .datePicker {
     appearance: none;
     box-sizing: border-box;

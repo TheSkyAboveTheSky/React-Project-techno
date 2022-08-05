@@ -13,10 +13,10 @@ const conversationRouter = require('./routes/conversations');
 const messageRouter = require('./routes/messages');
 const contactRouter = require('./routes/contact');
 const imageRouter = require('./routes/image');
-
+const timelineRouter = require('./routes/timelines');
 
 const corsOptions ={
-    origin:'http://localhost:3001', 
+    origin:'http://localhost:3000', 
     credentials:true,           
     optionSuccessStatus:200
 }
@@ -35,7 +35,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.json());
-
 connectDB();
 
 
@@ -47,10 +46,10 @@ app.use("/api/conversations", conversationRouter);
 app.use("/api/messages", messageRouter);
 app.use("/api/contact", contactRouter);
 app.use("/api/image", imageRouter);
-
+app.use('/tickets',require('./routes/tickets'))
+app.use(timelineRouter);
 app.use(verifyJWT);
 app.use(userRouter);
-
 
 
 

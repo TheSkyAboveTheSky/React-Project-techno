@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import './App.css';
 import Login from '../Login/Login';
 import Admin from '../Admin/Admin';
+import TicketsList from '../TicketsList/TicketsList';
 import Register from '../Register/Register';
 import ProtectedRoutes from '../ProtectedRoutes/ProtectedRoutes';
+import TicketDetails from '../TicketDetails/TicketDetails';
 import UnAuthorized from '../UnAuthorized/UnAuthorized';
 import Sidebar from '../Sidebar/Sidebar';
 import Home from '../Home/Home';
@@ -14,6 +16,9 @@ import Chat from '../Chat/Chat';
 import Contact from '../Contact/Contact';
 import { Fragment } from 'react';
 import ContactAdd from '../ContactAdd/ContactAdd';
+import Task from '../Tasks/Task';
+import AddTask from '../addTask/AddTask';
+import Timeline from '../Timeline/Timeline';
 
 function App() {
   return (
@@ -36,6 +41,11 @@ function App() {
             <ProtectedRoutes path='/contact' component={Contact} />
             <ProtectedRoutes path='/contact-add' component={ContactAdd} />
             <Route path='/unAuthorized' component={UnAuthorized} />
+            <ProtectedRoutes path="/tickets" component={TicketsList}></ProtectedRoutes>
+            <ProtectedRoutes path="/ticket/:id" component={TicketDetails}></ProtectedRoutes>
+            <Route path="/taskboard" component={Task} />
+            <Route path="/add-task" component={AddTask} />
+            <Route path="/timeline" component={Timeline} />
           </div>
         </ Fragment>
       </Switch>

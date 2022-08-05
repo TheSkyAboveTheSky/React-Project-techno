@@ -27,11 +27,20 @@ class Login extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            let { data } = await axios.post('http://localhost:3000/auth', {
+            let { data } = await axios.post('http://localhost:3001/auth', {
                 email: this.state.email,
                 password: this.state.password
             });
             if (data.message === 'success') {
+                try {
+                    let response = await axios.post('http://localhost:3001/timeline',{
+                        body : "You've been logged in",
+                        user : data.id
+                    });
+                    console.log(response.data);
+                }catch(err) {
+                    alert('Can\'t create a new timeline');
+                }
                 localStorage.setItem('accessToken', data.accessToken);
                 let userid = jwtDecode(data.accessToken).UserInfo.id;
 
@@ -41,6 +50,7 @@ class Login extends Component {
                 // localStorage.setItem('roles', data.roles);
                 // localStorage.setItem('name', data.name);
                 // localStorage.setItem('email', data.email);
+                localStorage.setItem('id', data.id);
                 if (data.roles.includes("0000")) {
                     this.props.history.replace('/unAuthorized');
                 }
@@ -48,7 +58,7 @@ class Login extends Component {
                     this.props.history.replace('/home');
                 }
             } else {
-                alert('Invalid credentials');
+                alert('Invalid credentials'); 
             }
         }
         catch (error) {
@@ -64,8 +74,9 @@ class Login extends Component {
             }
         }
     }
-
-
+        
+    }
+   
     render() {
         return (
             <div className="limiter">
@@ -105,15 +116,6 @@ class Login extends Component {
                                 </button>
                             </div>
 
-                            {/* <div className="text-center p-t-12">
-                                <span className="txt1">
-                                    Forgot
-                                </span>
-                                <a className="txt2" href="#">
-                                    Username / Password?
-                                </a>
-                            </div> */}
-
                             <div className="text-center p-t-136">
                                 <a className="txt2" href="register">
                                     Create your Account
@@ -127,6 +129,5 @@ class Login extends Component {
         );
     }
 }
-
 
 export default Login;
