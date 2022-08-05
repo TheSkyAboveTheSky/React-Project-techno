@@ -9,7 +9,12 @@ const todoRouter = require('./routes/todo');
 const connectDB = require('./config/db');
 const verifyJWT = require('./middlewares/verifyJWT');
 const cookieParser = require('cookie-parser');
+const conversationRouter = require('./routes/conversations');
+const messageRouter = require('./routes/messages');
+const contactRouter = require('./routes/contact');
+const imageRouter = require('./routes/image');
 const timelineRouter = require('./routes/timelines');
+
 const corsOptions ={
     origin:'http://localhost:3000', 
     credentials:true,           
@@ -36,7 +41,11 @@ connectDB();
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/send-email', require('./routes/mail'));
-app.use('/api/todo',todoRouter)
+app.use('/api/todo',todoRouter);
+app.use("/api/conversations", conversationRouter);
+app.use("/api/messages", messageRouter);
+app.use("/api/contact", contactRouter);
+app.use("/api/image", imageRouter);
 app.use('/tickets',require('./routes/tickets'))
 app.use(timelineRouter);
 app.use(verifyJWT);
