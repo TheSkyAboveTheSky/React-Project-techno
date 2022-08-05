@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Sidebar.css';
 import { NavLink } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
+import axios from 'axios';
 
 class Sidebar extends Component {
 
@@ -14,7 +15,12 @@ class Sidebar extends Component {
         }
     }
 
-    logout = () => {
+    logout = async () => {
+
+        let userid = jwtDecode(localStorage.getItem('accessToken')).UserInfo.id;
+        await axios.put(`http://localhost:3000/loginstatus/${userid}`, {
+            isLoggedIn: false
+        }, { headers: { 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` } })
         localStorage.clear();
     }
 
@@ -38,8 +44,8 @@ class Sidebar extends Component {
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="todo-list"><i className="fa fa-check-square-o"></i><span>Todo List</span></NavLink></li>
                         <li className="g_heading">App</li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-calendar.html"><i className="fa fa-calendar"></i><span>Calendar</span></NavLink></li>
-                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-chat.html"><i className="fa fa-comments"></i><span>Chat</span></NavLink></li>
-                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-contact.html"><i className="fa fa-address-book"></i><span>Contact</span></NavLink></li>
+                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="chat"><i className="fa fa-comments"></i><span>Chat</span></NavLink></li>
+                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="contact"><i className="fa fa-address-book"></i><span>Contact</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-filemanager.html"><i className="fa fa-folder"></i><span>FileManager</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-setting.html"><i className="fa fa-gear"></i><span>Setting</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="page-gallery.html"><i className="fa fa-photo"></i><span>Gallery</span></NavLink></li>
@@ -100,7 +106,7 @@ class Sidebar extends Component {
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="todo-list"><i className="fa fa-check-square-o"></i><span>Todo List</span></NavLink></li>
                         <li className="g_heading">App</li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-calendar.html"><i className="fa fa-calendar"></i><span>Calendar</span></NavLink></li>
-                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-chat.html"><i className="fa fa-comments"></i><span>Chat</span></NavLink></li>
+                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="chat"><i className="fa fa-comments"></i><span>Chat</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-contact.html"><i className="fa fa-address-book"></i><span>Contact</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-filemanager.html"><i className="fa fa-folder"></i><span>FileManager</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-setting.html"><i className="fa fa-gear"></i><span>Setting</span></NavLink></li>
@@ -129,7 +135,7 @@ class Sidebar extends Component {
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="todo-list"><i className="fa fa-check-square-o"></i><span>Todo List</span></NavLink></li>
                         <li className="g_heading">App</li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-calendar.html"><i className="fa fa-calendar"></i><span>Calendar</span></NavLink></li>
-                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-chat.html"><i className="fa fa-comments"></i><span>Chat</span></NavLink></li>
+                        <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="chat"><i className="fa fa-comments"></i><span>Chat</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="app-contact.html"><i className="fa fa-address-book"></i><span>Contact</span></NavLink></li>
                         <li><NavLink activeStyle={{ color: "red", textDecoration: "none", borderRight: "2px solid black" }} to="authentication" className="has-arrow arrow-c"><i className="fa fa-lock"></i><span>Authentication</span></NavLink>
                             <ul>

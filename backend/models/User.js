@@ -15,7 +15,11 @@ const userSchema = new Schema({
         default :"Team One",
     },
     email: String,
-    password: String
+    password: String,
+    isLoggedIn: {
+        type: Boolean,
+        default: false
+    }
 },
 {collection:"TestCollection"},{timestamps: true});
 module.exports = Order = mongoose.model('User',userSchema);
