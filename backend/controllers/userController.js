@@ -22,7 +22,7 @@ module.exports.createUser = (req, res) => {
     newUser.save().then(user => { res.json(user) }).catch(err => { res.json(err) });
 }
 
-module.exports.updateUser = async (req,res) => {
+module.exports.updateUser = async (req, res) => {
     const user = await User.findById(req.params.id);
     if (!user) return res.sendStatus(404);
     user.roles = req.body.roles;
@@ -34,3 +34,15 @@ module.exports.getUserRoles = (req, res) => {
     User.findById(req.params.id).then(user => { res.json(user.roles) }).catch(err => { res.json(err) });
 }
 
+module.exports.getFriends = (req, res) => {
+    User.find({ _id: { $nin: [req.params.id] } })
+        .then(users => { res.json(users) }
+        ).catch(err => { res.json(err) });
+}
+
+module.exports.updateLoginStatus = async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (!user) return res.sendStatus(404);
+    user.isLoggedIn = req.body.isLoggedIn;
+    user.save().then(user => { res.json(user) }).catch(err => { res.json(err) });
+}
