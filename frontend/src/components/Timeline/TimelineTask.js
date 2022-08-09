@@ -3,6 +3,7 @@ import axios from '../Axios/axios'
 import TimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import dateFormat from 'dateformat';
+import banner from '../../banner.jpg';
 function TimelineTask() {
   const [timelines,setTimelines] = useState([]);
   const [id,setId] = useState(window.localStorage.getItem('id'));
@@ -32,14 +33,14 @@ function TimelineTask() {
         </ul>
       </div>
       <div>
-
+        <img alt="banner" src={banner} width="100%" height="100%"/>
       <table className="table spacing8 text-nowrap">
         <thead className="thead-light">
           <tr>
-            <th>#</th>
-            <th>Activity</th>
-            <th>Time</th>
-            <th>Created At</th>
+            <th style={{"backgroundColor" : "red","color" : "white"}}>#</th>
+            <th style={{"backgroundColor" : "red","color" : "white"}}>Activity</th>
+            <th style={{"backgroundColor" : "red","color" : "white"}}>Time</th>
+            <th style={{"backgroundColor" : "red","color" : "white"}}>Created At</th>
           </tr>
         </thead>
         <tbody>
@@ -55,10 +56,10 @@ function TimelineTask() {
                                       <h6 className="mb-0">{timeline.body}</h6>
                                     </td>
                                     <td>
-                                      <div className="text-info">{timeAgo.format(new Date(timeline.createdAt))}</div>
+                                      <div className="mb-0">{timeAgo.format(new Date(timeline.createdAt))}</div>
                                     </td>
                                     <td>
-                                      <div className="text-info">Created At: {dateFormat(timeline.createdAt,"dd-mm-yyyy")}</div>
+                                      <div className="mb-0">Created At: {dateFormat(timeline.createdAt,"dd-mm-yyyy")}</div>
                                     </td>
                                 </tr>  
                       )
